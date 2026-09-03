@@ -1,0 +1,137 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { classificationLabel, loadIndicators } from "../../lib/catalog.ts";
+import { formatNumber } from "../../lib/profile/format.ts";
+import { sameYearRanks } from "../../lib/ranks.ts";
+import type { IndicatorDefinition } from "@geo-index/schema";
+
+export function getStaticPaths() {
+  return loadIndicators()
+    .indicators.filter((i) => i.rankable)
+    .map((indicator) => ({
+      params: { id: indicator.id },
+      props: { indicator },
+    }));
+}
+
+interface Props {
+  indicator: IndicatorDefinition;
+}
+
+const { indicator } = Astro.props;
+const table = sameYearRanks(indicator);
+const title = `${indicator.label} ranks — Geo Index`;
+---
+
+<BaseLayout
+  title={title}
+  description={`Same-year ranks for ${indicator.label}. Missing values are listed separately and are never treated as zero.`}
+  canonical={`/indicators/${indicator.id}/`}
+>
+  <nav class="crumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Geo Index</a></li>
+      <li><a href="/indicators/">Indicators</a></li>
+      <li aria-current="page">{indicator.label}</li>
+    </ol>
+  </nav>
+  <h1>{indicator.label}</h1>
+  {
+    table ? (
+      <p class="lede">
+        Ranked among {table.cohort} profiles with {table.year} data. Status, source, and year are
+        named on each row. Taiwan and Kosovo remain special status in this list.
+      </p>
+    ) : (
+      <p class="lede">No comparable same-year cohort is published for this indicator yet.</p>
+    )
+  }
+  <p class="muted">
+    Unit: {indicator.unit}. Preferred source: {indicator.preferredSource}.
+    {indicator.projectionPossible ? " Some later years may be projections." : ""}
+  </p>
+
+  {
+    table ? (
+      <table class="rank-table">
+        <thead>
+          <tr>
+            <th scope="col">Rank</th>
+            <th scope="col">Profile</th>
+            <th scope="col">Status</th>
+            <th scope="col">{table.year} value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {table.rows.map((row) => (
+            <tr>
+              <td>{row.rank}</td>
+              <th scope="row">
+                <a href={`/countries/${row.entityId}/`}>{row.name}</a>
+              </th>
+              <td>{classificationLabel(row.classification)}</td>
+              <td>
+                {formatNumber(row.value, indicator.format)}
+                <span class="muted"> {row.status}</span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    ) : null
+  }
+
+  {
+    table && table.missing.length ? (
+      <section>
+        <h2>No {table.year} figure</h2>
+        <p class="muted">
+          These profiles are not ranked for this year. Absence is not zero.
+        </p>
+        <ul class="missing-list">
+          {table.missing.map((row) => (
+            <li>
+              <a href={`/countries/${row.entityId}/`}>{row.name}</a>
+              <span class="muted"> {classificationLabel(row.classification)}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ) : null
+  }
+</BaseLayout>
+
+<style>
+  .crumb ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.7rem;
+    list-style: none;
+    margin: 0 0 1.5rem;
+    padding: 0;
+    font-size: 0.9rem;
+    color: var(--color-muted);
+  }
+  .crumb li:not(:last-child)::after {
+    content: "/";
+    margin-left: 0.7rem;
+    color: var(--color-rule);
+  }
+  .rank-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+    margin: 1rem 0 2rem;
+  }
+  .rank-table th,
+  .rank-table td {
+    text-align: left;
+    padding: 0.35rem 0.6rem 0.35rem 0;
+    border-bottom: var(--rule);
+  }
+  .missing-list {
+    columns: 2;
+    list-style: none;
+    padding: 0;
+  }
+</style>

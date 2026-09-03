@@ -1,0 +1,103 @@
+---
+import type { DisplayStat } from "../../lib/profile/format.ts";
+
+interface Props {
+  stat: DisplayStat;
+  compact?: boolean;
+}
+
+const { stat, compact = false } = Astro.props;
+---
+
+<div
+  class:list={[
+    "stat",
+    compact && "stat--compact",
+    stat.missing && "stat--missing",
+    stat.projection && "stat--projection",
+  ]}
+>
+  <p class="stat-label">{stat.shortLabel}</p>
+  <p class="stat-value">
+    {stat.text}
+    {stat.unit && !stat.missing ? <span class="stat-unit"> {stat.unit}</span> : null}
+  </p>
+  {
+    stat.missing ? (
+      <p class="stat-meta muted">{stat.missingKind === "no-comparable-data" ? "Not internationally comparable in this build" : stat.missingKind === "unavailable" ? "No observation in the current series" : "Figure not published"}</p>
+    ) : (
+      <p class="stat-meta">
+        <time datetime={String(stat.year)}>{stat.year}</time>
+        {stat.sourceLabel ? <> · {stat.sourceLabel}</> : null}
+        {stat.statusLabel ? (
+          <span class:list={["stat-status", stat.projection && "stat-status--projection"]}>
+            {stat.statusLabel}
+          </span>
+        ) : null}
+      </p>
+    )
+  }
+</div>
+
+<style>
+  .stat {
+    padding: 0.65rem 0 0.85rem;
+    border-top: var(--rule);
+    min-width: 0;
+  }
+  .stat-label {
+    margin: 0 0 0.2rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+  .stat-value {
+    font-family: var(--font-display);
+    font-size: 1.65rem;
+    line-height: 1.15;
+    margin: 0;
+    font-variant-numeric: tabular-nums;
+  }
+  .stat-unit {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    font-weight: 400;
+  }
+  .stat-meta {
+    margin: 0.35rem 0 0;
+    font-size: 0.82rem;
+    color: var(--color-muted);
+  }
+  .stat-status {
+    display: inline-block;
+    margin-left: 0.35rem;
+    padding: 0 0.3rem;
+    border: var(--rule);
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  .stat-status--projection {
+    border-style: dashed;
+    color: var(--color-water-deep);
+  }
+  .stat--projection {
+    background-image: repeating-linear-gradient(
+      -56deg,
+      transparent,
+      transparent 5px,
+      color-mix(in srgb, var(--color-water) 14%, transparent) 5px,
+      color-mix(in srgb, var(--color-water) 14%, transparent) 6px
+    );
+  }
+  .stat--missing .stat-value {
+    color: var(--color-muted);
+    font-size: 1.15rem;
+    font-family: var(--font-ui);
+  }
+  .stat--compact .stat-value {
+    font-size: 1.35rem;
+  }
+</style>

@@ -1,0 +1,7 @@
+name = "geo-index-releases"
+main = "src/index.ts"
+compatibility_date = "2026-09-03"
+workers_dev = true
+
+[vars]
+GITHUB_REPO = "Kn-Vector/geo-index"

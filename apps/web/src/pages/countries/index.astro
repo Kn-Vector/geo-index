@@ -1,0 +1,65 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import DirectoryIsland from "../../islands/DirectoryIsland.tsx";
+import { loadDirectoryRows } from "../../lib/catalog.ts";
+
+const rows = loadDirectoryRows();
+const core = rows.filter((r) => r.tier === "core").length;
+const additional = rows.filter((r) => r.tier === "profiled-additional").length;
+---
+
+<BaseLayout
+  title="Countries — Geo Index"
+  description="Searchable directory of Geo Index country and territory profiles, with filters and same-source headlines."
+  canonical="/countries/"
+>
+  <h1>Countries</h1>
+  <p class="lede">
+    {core} UN members and observers, plus {additional} additional profiles. Taiwan and Kosovo are
+    special status — never labelled UN members. Missing figures stay missing.
+  </p>
+  <p class="muted">
+    <a href="/methodology/maps/">How names and boundaries are treated</a>
+    ·
+    <a href="/compare/">Compare profiles</a>
+  </p>
+
+  <DirectoryIsland client:load rows={rows} />
+</BaseLayout>
+
+<style>
+  :global(.directory-controls) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: 0.85rem 1.25rem;
+    margin: 1.5rem 0 1rem;
+  }
+  :global(.directory-controls label) {
+    display: block;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-muted);
+    margin-bottom: 0.25rem;
+  }
+  :global(.directory-controls input),
+  :global(.directory-controls select) {
+    width: 100%;
+    font: inherit;
+    padding: 0.4rem 0.5rem;
+    border: var(--rule);
+    background: var(--color-paper-raised);
+  }
+  :global(.directory-table) {
+    width: 100%;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+  }
+  :global(.directory-table th),
+  :global(.directory-table td) {
+    text-align: left;
+    padding: 0.4rem 0.6rem 0.4rem 0;
+    border-bottom: var(--rule);
+    vertical-align: baseline;
+  }
+</style>

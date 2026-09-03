@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { loadRegions } from "../../lib/catalog.ts";
+
+const regions = loadRegions().filter((r) => r.kind === "region");
+const subregions = loadRegions().filter((r) => r.kind === "subregion");
+---
+
+<BaseLayout
+  title="Regions — Geo Index"
+  description="UN M49 regions and subregions used by Geo Index profiles."
+  canonical="/regions/"
+>
+  <h1>Regions</h1>
+  <p class="lede">
+    UN M49 geographic regions. Membership here is statistical, not a sovereignty claim.
+  </p>
+
+  <section>
+    <h2>M49 regions</h2>
+    <ul class="region-list">
+      {
+        regions.map((r) => (
+          <li>
+            <a href={`/regions/${r.slug}/`}>{r.name}</a>
+            <span class="muted"> M49 {r.m49} · {r.entities.length} profiles</span>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section>
+    <h2>Subregions</h2>
+    <ul class="region-list">
+      {
+        subregions.map((r) => (
+          <li>
+            <a href={`/regions/${r.slug}/`}>{r.name}</a>
+            <span class="muted"> M49 {r.m49} · {r.entities.length} profiles</span>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .region-list {
+    list-style: none;
+    padding: 0;
+    columns: 2;
+    gap: 1.25rem;
+  }
+  .region-list li {
+    break-inside: avoid;
+    padding: 0.15rem 0;
+  }
+</style>

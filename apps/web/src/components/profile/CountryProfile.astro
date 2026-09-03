@@ -1,0 +1,373 @@
+---
+import type { Entity } from "@geo-index/schema";
+import { classificationLabel } from "../../lib/catalog.ts";
+import {
+  buildHeadlines,
+  economyCharts,
+  environmentCharts,
+  healthCharts,
+  navSections,
+  observationMap,
+  peopleCharts,
+  sourceGroups,
+  statsForSection,
+  vintageSummary,
+  type ProfileSectionId,
+} from "../../lib/profile/assemble.ts";
+import { countrySilhouette } from "../../lib/profile/silhouette.ts";
+import { LATEST_UNAVAILABLE } from "../../lib/profile/format.ts";
+import { loadGeographyNote, loadMedia, loadTheme } from "../../lib/catalog.ts";
+import { pickHero } from "../../lib/media.ts";
+import type { DataManifest, EntityProfile, IndicatorDefinition } from "@geo-index/schema";
+import Statistic from "./Statistic.astro";
+import StatList from "./StatList.astro";
+import Figure from "./Figure.astro";
+import SectionNav from "../../islands/SectionNav.tsx";
+
+interface Props {
+  entity: Entity;
+  profile: EntityProfile | null;
+  indicators: IndicatorDefinition[];
+  manifest: DataManifest | null;
+}
+
+const { entity, profile, indicators, manifest } = Astro.props;
+const flag = entity.isoAlpha2 ? `/flags/${entity.isoAlpha2.toLowerCase()}.svg` : undefined;
+const byId = observationMap(profile);
+const headlines = buildHeadlines(indicators, byId);
+const people = statsForSection("people", entity, indicators, byId);
+const economy = statsForSection("economy", entity, indicators, byId);
+const development = statsForSection("development", entity, indicators, byId);
+const health = statsForSection("health-education", entity, indicators, byId);
+const environment = statsForSection("environment", entity, indicators, byId);
+const sources = sourceGroups(indicators, profile, manifest);
+const silhouette = countrySilhouette(entity.id, entity.commonName);
+const nativeNames = entity.nativeNames ?? [];
+const officialDistinct = entity.officialName !== entity.commonName;
+const theme = loadTheme(entity.id);
+const photos = loadMedia(entity.id).filter((a) => a.role !== "flag" && a.role !== "silhouette");
+const heroPhoto = pickHero(photos);
+const geoNote = loadGeographyNote(entity.id);
+
+const hasPeople = people.some((s) => !s.missing) || peopleCharts(entity, byId).length > 0;
+const hasEconomy = economy.some((s) => !s.missing);
+const hasDevelopment = development.length > 0 && entity.tier !== "index-only";
+const hasHealth = health.some((s) => !s.missing) || health.some((s) => s.missingKind === "no-comparable-data");
+const hasEnvironment = environment.some((s) => !s.missing);
+const educationIds = new Set(indicators.filter((i) => i.topics.includes("education")).map((i) => i.id));
+const hasEducationRows = health.some((s) => educationIds.has(s.id));
+const hasEducationValues = health.some((s) => educationIds.has(s.id) && !s.missing);
+
+const present = new Set<ProfileSectionId>(["overview", "geography", "government"]);
+if (hasPeople) present.add("people");
+if (hasEconomy) present.add("economy");
+if (hasDevelopment) present.add("development");
+if (hasHealth) present.add("health-education");
+if (hasEnvironment) present.add("environment");
+if (sources.length) present.add("sources");
+else present.add("sources");
+
+const sections = navSections(present);
+const popCharts = hasPeople ? peopleCharts(entity, byId, theme.accent) : [];
+const ecoCharts = hasEconomy ? economyCharts(entity, byId, theme.accent) : [];
+const lexCharts = hasHealth ? healthCharts(entity, byId, theme.accent) : [];
+const envCharts = hasEnvironment ? environmentCharts(entity, byId, theme.accent) : [];
+const vintage = vintageSummary(manifest, headlines);
+
+const regionLine = [entity.subregion?.name, entity.region?.name].filter(Boolean).join(", ");
+const locateHref = `/?focus=${entity.id}`;
+
+const overviewBits: string[] = [];
+overviewBits.push(
+  `${entity.commonName} is ${classificationLabel(entity.classification) === "UN member" ? "a UN member state" : classificationLabel(entity.classification) === "UN observer" ? "a UN observer state" : classificationLabel(entity.classification).toLowerCase()}${regionLine ? ` in ${regionLine}` : ""}.`,
+);
+if (entity.unDesignation) {
+  overviewBits.push(`UN statistical designation: ${entity.unDesignation}.`);
+}
+if (entity.notes) overviewBits.push(entity.notes);
+overviewBits.push("Every figure names its source, year, and whether it is an actual value, an estimate, or a projection. Missing values stay missing.");
+---
+
+<div class="profile-themed" style={`--profile-accent: ${theme.accent}; --profile-accent-muted: ${theme.accentMuted}`}>
+<a class="skip-link skip-sections" href="#overview">Skip to profile</a>
+
+<nav class="crumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/">Geo Index</a></li>
+    <li><a href="/countries/">Countries</a></li>
+    <li aria-current="page">{entity.commonName}</li>
+  </ol>
+</nav>
+
+<header class="profile-hero">
+  <div class="hero-identity">
+    {
+      flag ? (
+        <img class="hero-flag" src={flag} alt={`Flag of ${entity.commonName}`} width="72" height="54" />
+      ) : null
+    }
+    <div class="hero-names">
+      <h1>{entity.commonName}</h1>
+      {officialDistinct ? <p class="hero-official">{entity.officialName}</p> : null}
+      {
+        nativeNames.length ? (
+          <p class="hero-native">
+            {nativeNames.map((n, i) => (
+              <>
+                {i > 0 ? <span aria-hidden="true"> · </span> : null}
+                <span dir="auto" lang={n.language}>
+                  {n.value}
+                </span>
+              </>
+            ))}
+          </p>
+        ) : null
+      }
+      <p class="hero-place">
+        <span class="pill">{classificationLabel(entity.classification)}</span>
+        {regionLine ? <span class="hero-region">{regionLine}</span> : null}
+      </p>
+      <p class="hero-locate">
+        <a href={locateHref}>Locate on Earth</a>
+        <span class="muted"> — opens the globe, focused on {entity.commonName}. This page does not load a map.</span>
+      </p>
+    </div>
+    {
+      silhouette ? (
+        <div class="hero-silhouette" set:html={silhouette.svg} />
+      ) : null
+    }
+  </div>
+  {
+    heroPhoto ? (
+      <figure class="hero-photo">
+        <img src={heroPhoto.src} alt={heroPhoto.alt} width="960" height="540" loading="eager" decoding="async" />
+        <figcaption class="muted">
+          {heroPhoto.credit}. {heroPhoto.license}
+          {heroPhoto.pageUrl ? (
+            <>
+              {" "}
+              <a href={heroPhoto.pageUrl}>Wikimedia Commons</a>
+            </>
+          ) : null}
+        </figcaption>
+      </figure>
+    ) : null
+  }
+
+  <div class="hero-stats" aria-label="Headline statistics">
+    {headlines.map((stat) => <Statistic stat={stat} />)}
+  </div>
+
+  <p class="hero-vintage muted">{vintage}</p>
+</header>
+
+<SectionNav client:idle sections={sections} />
+
+<section id="overview" class="profile-section">
+  <h2>Overview</h2>
+  {overviewBits.map((p) => <p>{p}</p>)}
+  {
+    photos.length > 1 ? (
+      <div class="photo-row">
+        {photos
+          .filter((p) => p.src !== heroPhoto?.src)
+          .slice(0, 4)
+          .map((photo) => (
+            <figure>
+              <img src={photo.src} alt={photo.alt} width="480" height="320" loading="lazy" decoding="async" />
+              <figcaption class="muted">
+                {photo.credit}. {photo.license}
+              </figcaption>
+            </figure>
+          ))}
+      </div>
+    ) : null
+  }
+  <dl class="id-grid">
+    {entity.isoAlpha2 ? <><dt>ISO alpha-2</dt><dd>{entity.isoAlpha2}</dd></> : null}
+    {entity.isoAlpha3 ? <><dt>ISO alpha-3</dt><dd>{entity.isoAlpha3}</dd></> : null}
+    {entity.m49 ? <><dt>UN M49</dt><dd>{entity.m49}</dd></> : null}
+    {entity.wikidataId ? (
+      <>
+        <dt>Wikidata</dt>
+        <dd>
+          <a href={`https://www.wikidata.org/wiki/${entity.wikidataId}`}>{entity.wikidataId}</a>
+        </dd>
+      </>
+    ) : null}
+  </dl>
+</section>
+
+{
+  hasPeople ? (
+    <section id="people" class="profile-section">
+      <h2>People</h2>
+      <p>
+        Population stocks and demographic rates are from the UN World Population Prospects 2024
+        medium variant unless another source is named. Years from 2024 onward are projections.
+      </p>
+      <StatList stats={people} />
+      {popCharts.map((chart) => <Figure chart={chart} />)}
+    </section>
+  ) : null
+}
+
+{
+  hasEconomy ? (
+    <section id="economy" class="profile-section">
+      <h2>Economy</h2>
+      <p>
+        National accounts and related World Bank series. Totals are not comparable as “averages”
+        across countries; rates such as GDP per capita include same-year cohort medians where
+        coverage allows.
+      </p>
+      <StatList stats={economy} />
+      {ecoCharts.map((chart) => <Figure chart={chart} />)}
+    </section>
+  ) : null
+}
+
+{
+  hasDevelopment ? (
+    <section id="development" class="profile-section">
+      <h2>Development</h2>
+      <p>
+        Human development indices are published only from the latest UNDP HDR series. This build
+        does not invent a substitute index.
+      </p>
+      <StatList stats={development} />
+    </section>
+  ) : null
+}
+
+{
+  hasHealth ? (
+    <section id="health-education" class="profile-section">
+      <h2>Health and education</h2>
+      <p>
+        Life expectancy and mortality are UN WPP series unless labelled otherwise. Education
+        figures are UNESCO UIS (CC BY-SA, isolated) where a comparable series exists; otherwise
+        they stay missing.
+      </p>
+      <StatList stats={health} />
+      {
+        hasEducationRows || hasEducationValues ? null : (
+          <p class="missing-note">{LATEST_UNAVAILABLE} for internationally comparable education series.</p>
+        )
+      }
+      {lexCharts.map((chart) => <Figure chart={chart} />)}
+    </section>
+  ) : null
+}
+
+{
+  hasEnvironment ? (
+    <section id="environment" class="profile-section">
+      <h2>Environment</h2>
+      <p>
+        Forest cover is World Bank WDI. CO₂ is the Global Carbon Project series via Our World in
+        Data — not IEA-EDGAR.
+      </p>
+      <StatList stats={environment} />
+      {envCharts.map((chart) => <Figure chart={chart} />)}
+    </section>
+  ) : null
+}
+
+<section id="geography" class="profile-section">
+  <h2>Geography</h2>
+  <dl class="id-grid">
+    {entity.region ? <><dt>Region</dt><dd>{entity.region.name}</dd></> : null}
+    {entity.subregion ? <><dt>Subregion</dt><dd>{entity.subregion.name}</dd></> : null}
+    {entity.intermediateRegion ? <><dt>Intermediate region</dt><dd>{entity.intermediateRegion.name}</dd></> : null}
+    {entity.naturalEarth?.adm0A3 ? <><dt>Natural Earth ADM0_A3</dt><dd>{entity.naturalEarth.adm0A3}</dd></> : null}
+    {entity.naturalEarth?.tiny ? <><dt>Cartographic size</dt><dd>Tiny state on the 50m globe (point or small polygon)</dd></> : null}
+    {
+      geoNote?.capitals?.length ? (
+        <>
+          <dt>{geoNote.capitals.length > 1 ? "Capitals" : "Capital"}</dt>
+          <dd>
+            {geoNote.capitals.map((c) => `${c.name} (${c.role})`).join("; ")}
+            <span class="muted"> — {geoNote.source}</span>
+          </dd>
+        </>
+      ) : null
+    }
+  </dl>
+  {geoNote?.note ? <p>{geoNote.note}</p> : null}
+  {
+    silhouette ? (
+      <figure class="geo-silhouette">
+        <div set:html={silhouette.svg} />
+        <figcaption class="muted">
+          Outline from Natural Earth 50m Admin 0. Made with Natural Earth. Not a locator map.
+        </figcaption>
+      </figure>
+    ) : (
+      <p class="missing-note">Silhouette not available for this entity.</p>
+    )
+  }
+</section>
+
+<section id="government" class="profile-section">
+  <h2>Government</h2>
+  <p>
+    Classification is descriptive and is not a recognition of legal claims.
+    <a href="/methodology/maps/">Map and status policy</a>.
+  </p>
+  <dl class="id-grid">
+    <dt>Status</dt>
+    <dd>{classificationLabel(entity.classification)}</dd>
+    <dt>Publication tier</dt>
+    <dd>
+      {entity.tier === "core"
+        ? "Core profile"
+        : entity.tier === "profiled-additional"
+          ? "Additional profile"
+          : "Index only"}
+    </dd>
+    {entity.parentIsoAlpha3 ? <><dt>Related ISO alpha-3</dt><dd>{entity.parentIsoAlpha3}</dd></> : null}
+    {entity.ldc ? <><dt>UN LDC</dt><dd>Least developed country</dd></> : null}
+    {entity.lldc ? <><dt>Landlocked</dt><dd>Landlocked developing country</dd></> : null}
+    {entity.sids ? <><dt>SIDS</dt><dd>Small island developing State</dd></> : null}
+  </dl>
+  {entity.notes ? <p>{entity.notes}</p> : null}
+</section>
+
+<section id="sources" class="profile-section">
+  <h2>Sources</h2>
+  {
+    sources.length === 0 ? (
+      <p class="missing-note">No statistical observations are published for this entity yet.</p>
+    ) : (
+      sources.map((group) => (
+        <article class="source-block">
+          <h3>{group.name}</h3>
+          <p class="muted">
+            {group.dataset}. Vintage {group.vintageLabel}. {group.licenseLabel}.
+            {group.retrievedAt ? ` Retrieved ${group.retrievedAt.slice(0, 10)}.` : ""}
+            {group.url ? (
+              <>
+                {" "}
+                <a href={group.url}>Source file</a>.
+              </>
+            ) : null}
+          </p>
+          <ul class="source-indicators">
+            {group.indicators.map((ind) => (
+              <li>
+                {ind.label} ({ind.year}, {ind.status}; series {ind.originalIndicatorId})
+              </li>
+            ))}
+          </ul>
+        </article>
+      ))
+    )
+  }
+  <p class="muted">
+    Names, classifications, and boundaries are for statistical and cartographic use and do not
+    constitute recognition of legal claims.
+  </p>
+</section>
+</div>

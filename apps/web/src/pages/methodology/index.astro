@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Methodology — Geo Index"
+  description="How Geo Index chooses sources, treats missing data, flags projections, and classifies entities."
+  canonical="/methodology/"
+>
+  <h1>Methodology</h1>
+  <p class="lede">
+    Geo Index is a static editorial atlas. Country pages are documents, not live dashboards. We do
+    not invent statistics, and we do not call unofficial country APIs.
+  </p>
+
+  <dl class="policy">
+    <dt>Missing data</dt>
+    <dd>
+      A missing observation is shown as an em dash or “No comparable data.” It is never coerced to
+      zero. Zero is rendered only when the source value is actually zero.
+    </dd>
+    <dt>Projections</dt>
+    <dd>
+      UN WPP years from 2024 onward are medium-variant projections. IMF WEO forecast years are
+      labelled projection. Ranks use the same-year cohort, not a mix of actuals and forecasts,
+      unless the year itself is a projection year for that series.
+    </dd>
+    <dt>Source precedence</dt>
+    <dd>
+      Population and demography: UN WPP 2024 over WDI. Economy: World Bank WDI, with IMF WEO as
+      fallback and for fiscal series. Human development: the latest UNDP HDR recalculated series
+      only. Education: UNESCO UIS (ShareAlike, isolated). Labour: ILOSTAT. CO₂: Our World in Data /
+      Global Carbon Project — not IEA-EDGAR. Health: WDI / WPP, not WHO GHO as a hosted dependency.
+    </dd>
+    <dt>Classification</dt>
+    <dd>
+      UN member, UN observer, associated state, dependency, special administrative region,
+      territory, statistical area, or special status. Taiwan and Kosovo are special status and are
+      never labelled UN members. Palestine and the Holy See are UN observers.
+    </dd>
+    <dt>Join keys</dt>
+    <dd>
+      Statistics are joined on stable identifiers (slug, ISO alpha-2/3, M49, Natural Earth ADM0_A3),
+      never on English names. HDR MPI 2025 tables without ISO3/M49 are skipped rather than
+      name-matched.
+    </dd>
+    <dt>Maps</dt>
+    <dd>
+      See the <a href="/methodology/maps/">map and status policy</a>. Natural Earth de facto
+      geometry, dispute overlays, and independently selectable observer/special-status features.
+    </dd>
+    <dt>Licences</dt>
+    <dd>
+      Site code is MIT. Upstream datasets keep their own licences and are attributed on every
+      profile. UNESCO UIS remains under <code>data/raw/unesco/</code>. Wikimedia Commons photographs
+      are allowlisted (CC0, CC BY, CC BY-SA, public domain); NC and ND files are rejected.
+    </dd>
+  </dl>
+</BaseLayout>

@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import GlobeIsland from "../islands/GlobeIsland.tsx";
+import { loadGlobeIndex } from "../lib/catalog.ts";
+
+const index = loadGlobeIndex();
+---
+
+<BaseLayout
+  title="Geo Index — World atlas"
+  description="An editorial world atlas. Browse countries on a self-hosted globe, or use the searchable list."
+>
+  <div class="home-intro">
+    <h1>Geo Index</h1>
+    <p class="lede">
+      An editorial world atlas. Country pages are documents, not dashboards — each figure sourced,
+      dated, and allowed to be missing.
+    </p>
+    <p class="muted">
+      Names and boundaries do not imply endorsement of legal claims.
+      <a href="/methodology/maps/">Map and status policy</a>.
+      <a href="/countries/">Browse the directory</a>
+      — the globe is not the only way in.
+      Country pages link back with <code>/?focus=</code> to locate a place on Earth.
+    </p>
+  </div>
+
+  <GlobeIsland client:load index={index} />
+</BaseLayout>
+
+<style>
+  .home-intro {
+    padding-inline: var(--page-gutter);
+    max-width: 72rem;
+    margin-bottom: 1.5rem;
+  }
+
+  :global(.site-main:has(.globe-home)) {
+    max-width: none;
+    padding-inline: 0;
+    padding-top: 1.5rem;
+  }
+</style>

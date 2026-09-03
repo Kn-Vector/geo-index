@@ -1,0 +1,27 @@
+{
+  "name": "@geo-index/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && pagefind --site dist",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/preact": "^5.0.0",
+    "@fontsource-variable/source-sans-3": "^5.2.8",
+    "@fontsource-variable/source-serif-4": "^5.2.8",
+    "@geo-index/schema": "workspace:*",
+    "astro": "7.2.10",
+    "maplibre-gl": "6.7.0",
+    "preact": "^10.27.0",
+    "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "pagefind": "^1.5.2",
+    "typescript": "^5.9.2"
+  }
+}

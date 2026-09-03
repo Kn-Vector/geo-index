@@ -1,0 +1,64 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CountryProfile from "../../components/profile/CountryProfile.astro";
+import {
+  classificationLabel,
+  loadDataManifest,
+  loadEntities,
+  loadEntityProfile,
+  loadIndicators,
+} from "../../lib/catalog.ts";
+import { isCountrySchema } from "../../lib/profile/assemble.ts";
+import type { Entity } from "@geo-index/schema";
+import "../../styles/profile.css";
+
+export function getStaticPaths() {
+  return loadEntities().map((entity) => ({
+    params: { slug: entity.id },
+    props: { entity },
+  }));
+}
+
+interface Props {
+  entity: Entity;
+}
+
+const { entity } = Astro.props;
+const profile = loadEntityProfile(entity.id);
+const indicators = loadIndicators().indicators;
+const manifest = loadDataManifest();
+const path = `/countries/${entity.id}/`;
+const title = `${entity.commonName} — Population, Economy, Health, Geography & Statistics`;
+const description = `${entity.commonName} (${classificationLabel(entity.classification)}${entity.region ? `, ${entity.region.name}` : ""}): sourced population, economy, health, and geography figures. Missing values are shown as missing.`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Geo Index", item: "/" },
+        { "@type": "ListItem", position: 2, name: "Countries", item: "/countries/" },
+        { "@type": "ListItem", position: 3, name: entity.commonName, item: path },
+      ],
+    },
+    {
+      "@type": isCountrySchema(entity) ? "Country" : "Place",
+      name: entity.commonName,
+      alternateName: [
+        entity.officialName,
+        ...(entity.nativeNames ?? []).map((n) => n.value),
+      ].filter((n, i, arr) => n && arr.indexOf(n) === i && n !== entity.commonName),
+      identifier: entity.isoAlpha3 ?? entity.m49 ?? entity.id,
+      url: path,
+    },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description} canonical={path} ogType="article" ogImage={`/og/${entity.id}.png`}>
+  <script is:inline type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+  <div class="profile-page">
+    <CountryProfile entity={entity} profile={profile} indicators={indicators} manifest={manifest} />
+  </div>
+</BaseLayout>

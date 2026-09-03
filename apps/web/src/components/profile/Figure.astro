@@ -1,0 +1,83 @@
+---
+import type { ChartBlock } from "../../lib/profile/assemble.ts";
+
+interface Props {
+  chart: ChartBlock;
+}
+
+const { chart } = Astro.props;
+---
+
+<figure class="profile-figure">
+  <div class="profile-figure-frame" set:html={chart.svg} />
+  <figcaption>
+    {chart.caption}
+    <span class="muted"> {chart.source}.</span>
+  </figcaption>
+  <details class="chart-table">
+    <summary>Data table</summary>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Year</th>
+          <th scope="col">{chart.valueLabel}</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          chart.rows.map((row) => (
+            <tr>
+              <th scope="row">{row.year}</th>
+              <td>{row.value}</td>
+              <td>{row.status}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </details>
+</figure>
+
+<style>
+  .profile-figure {
+    margin: 1.25rem 0 1.75rem;
+    padding: 0;
+    max-width: 42rem;
+  }
+  .profile-figure-frame {
+    overflow: hidden;
+  }
+  .profile-figure :global(.profile-chart) {
+    display: block;
+    width: 100%;
+    height: auto;
+    font-family: var(--font-ui);
+  }
+  figcaption {
+    margin-top: 0.55rem;
+    font-size: 0.9rem;
+    color: var(--color-ink);
+    max-width: none;
+  }
+  .chart-table {
+    margin-top: 0.45rem;
+    font-size: 0.88rem;
+  }
+  .chart-table summary {
+    cursor: pointer;
+    color: var(--color-muted);
+  }
+  .chart-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .chart-table th,
+  .chart-table td {
+    text-align: left;
+    padding: 0.25rem 0.4rem 0.25rem 0;
+    border-bottom: var(--rule);
+  }
+</style>

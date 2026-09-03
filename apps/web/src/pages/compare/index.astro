@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CompareIsland from "../../islands/CompareIsland.tsx";
+import { COMPARE_INDICATOR_IDS, loadCompareIndex, loadIndicators } from "../../lib/catalog.ts";
+
+const entities = loadCompareIndex();
+const indicators = loadIndicators().indicators.filter((i) =>
+  (COMPARE_INDICATOR_IDS as readonly string[]).includes(i.id),
+);
+---
+
+<BaseLayout
+  title="Compare countries — Geo Index"
+  description="Compare two to four Geo Index profiles on the same indicators. Missing values stay missing."
+  canonical="/compare/"
+>
+  <h1>Compare</h1>
+  <p class="lede">
+    Two to four profiles, same-year figures where they exist. Projections are labelled. Null is
+    never shown as zero.
+  </p>
+  <p class="muted">
+    Try
+    <a href="/compare/?ids=japan,united-states">Japan and the United States</a>,
+    <a href="/compare/?ids=india,nigeria,brazil">India, Nigeria, Brazil</a>,
+    or
+    <a href="/compare/?ids=china,taiwan">China and Taiwan</a>
+    (Taiwan is special status, not a UN member).
+  </p>
+
+  <CompareIsland client:load entities={entities} indicators={indicators} />
+</BaseLayout>
+
+<style>
+  :global(.compare-add) {
+    margin: 1.25rem 0;
+    max-width: 28rem;
+  }
+  :global(.compare-add-row) {
+    display: flex;
+    gap: 0.5rem;
+  }
+  :global(.compare-add input) {
+    flex: 1;
+    font: inherit;
+    padding: 0.4rem 0.5rem;
+    border: var(--rule);
+    background: var(--color-paper-raised);
+  }
+  :global(.compare-add button),
+  :global(.compare-pills button) {
+    font: inherit;
+    border: var(--rule);
+    background: var(--color-paper-raised);
+    padding: 0.35rem 0.7rem;
+    cursor: pointer;
+  }
+  :global(.compare-pills) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+    list-style: none;
+    padding: 0;
+  }
+  :global(.compare-table) {
+    width: 100%;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+    margin-top: 1rem;
+  }
+  :global(.compare-table th),
+  :global(.compare-table td) {
+    text-align: left;
+    padding: 0.45rem 0.7rem 0.45rem 0;
+    border-bottom: var(--rule);
+    vertical-align: top;
+  }
+</style>

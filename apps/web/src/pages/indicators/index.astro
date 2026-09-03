@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { loadCoverage, loadIndicators } from "../../lib/catalog.ts";
+
+const indicators = loadIndicators().indicators.filter((i) => i.rankable);
+const coverage = loadCoverage();
+const byId = new Map((coverage?.byIndicator ?? []).map((row) => [row.indicatorId, row]));
+---
+
+<BaseLayout
+  title="Indicators — Geo Index"
+  description="Same-year rank tables for Geo Index indicators. Coverage is published as a fraction, not a rounded story."
+  canonical="/indicators/"
+>
+  <h1>Indicators</h1>
+  <p class="lede">
+    Ranks are same-year cohorts: “37th of 186 with 2024 data.” Latest-available ranks are not the
+    default. Coverage below 70% of core countries is labelled.
+  </p>
+  <ul class="indicator-list">
+    {
+      indicators.map((ind) => {
+        const cov = byId.get(ind.id);
+        const pct = cov ? Math.round(cov.fraction * 1000) / 10 : null;
+        const thin = cov != null && cov.fraction < 0.7;
+        return (
+          <li>
+            <a href={`/indicators/${ind.id}/`}>{ind.label}</a>
+            <span class="muted">
+              {" "}
+              {pct == null ? "coverage not yet reported" : `${pct}% of core profiles`}
+              {thin ? " — below the 70% global-rank threshold" : ""}
+            </span>
+          </li>
+        );
+      })
+    }
+  </ul>
+</BaseLayout>
+
+<style>
+  .indicator-list {
+    list-style: none;
+    padding: 0;
+  }
+  .indicator-list li {
+    padding: 0.35rem 0;
+    border-bottom: var(--rule);
+  }
+</style>

@@ -1,0 +1,223 @@
+# Curated Wikimedia Commons files. Pipeline rejects NC, ND, and unclear licenses.
+# User-Agent is sent; concurrency is capped; binaries are cached.
+userAgent: "GeoIndex/0.1 (static world atlas; https://github.com/geo-index; geoindex@localhost)"
+assets:
+  # --- Japan ---
+  - entityId: japan
+    role: hero
+    commonsTitle: Mount Fuji at night, Kawaguchiko.jpg
+    alt: Mount Fuji seen at night from Lake Kawaguchi
+  - entityId: japan
+    role: urban
+    commonsTitle: Tokyo Station-5.jpg
+    alt: The Marunouchi facade of Tokyo Station
+  - entityId: japan
+    role: architecture
+    commonsTitle: Itsukushima torii angle.jpg
+    alt: The floating torii of Itsukushima Shrine
+  - entityId: japan
+    role: culture
+    commonsTitle: KyotoFushimiInariLarge.jpg
+    alt: Vermilion torii corridor at Fushimi Inari Taisha
+  - entityId: japan
+    role: nature
+    commonsTitle: Lake Kawaguchiko Sakura Mount Fuji 4.JPG
+    alt: Cherry blossoms and Mount Fuji at Lake Kawaguchi
+
+  # --- United States ---
+  - entityId: united-states
+    role: hero
+    commonsTitle: Grand Canyon Hopi Point with rainbow 2013.jpg
+    alt: A rainbow over the Grand Canyon from Hopi Point
+  - entityId: united-states
+    role: architecture
+    commonsTitle: Statue of Liberty National Monument.jpg
+    alt: The Statue of Liberty on Liberty Island
+  - entityId: united-states
+    role: landscape
+    commonsTitle: Yosemite Valley from Tunnel View.jpg
+    alt: Yosemite Valley from Tunnel View
+  - entityId: united-states
+    role: urban
+    commonsTitle: Golden Gate Bridge at sunset 1.jpg
+    alt: The Golden Gate Bridge at sunset
+
+  # --- India ---
+  - entityId: india
+    role: hero
+    commonsTitle: Taj Mahal in March 2004.jpg
+    alt: The Taj Mahal and its reflecting pool
+  - entityId: india
+    role: architecture
+    commonsTitle: Gateway of India Mumbai.jpg
+    alt: The Gateway of India on the Mumbai waterfront
+  - entityId: india
+    role: urban
+    commonsTitle: India Gate in New Delhi 03-2016.jpg
+    alt: India Gate in New Delhi
+
+  # --- Brazil ---
+  - entityId: brazil
+    role: hero
+    commonsTitle: Cristo Redentor Rio de Janeiro 4.jpg
+    alt: Christ the Redeemer above Rio de Janeiro
+  - entityId: brazil
+    role: landscape
+    commonsTitle: Iguazu Falls (Foz do Iguaçu, Brazil).jpg
+    alt: Iguaçu Falls from the Brazilian side
+  - entityId: brazil
+    role: urban
+    commonsTitle: 00 1838 Iguazu Falls from the Brazilian side.jpg
+    alt: The Brazilian walkways at Iguaçu Falls
+
+  # --- Nigeria ---
+  - entityId: nigeria
+    role: hero
+    commonsTitle: Zuma Rock.jpg
+    alt: Zuma Rock rising above the landscape near Abuja
+  - entityId: nigeria
+    role: urban
+    commonsTitle: National Mosque Abuja.jpg
+    alt: The National Mosque in Abuja
+  - entityId: nigeria
+    role: culture
+    commonsTitle: Olumo Rock.jpg
+    alt: Olumo Rock in Abeokuta
+
+  # --- France ---
+  - entityId: france
+    role: hero
+    commonsTitle: Tour Eiffel Wikimedia Commons.jpg
+    alt: The Eiffel Tower in Paris
+  - entityId: france
+    role: architecture
+    commonsTitle: Notre-Dame de Paris 2013-07-24.jpg
+    alt: Notre-Dame Cathedral in Paris
+  - entityId: france
+    role: landscape
+    commonsTitle: Mont St Michel at sunrise.jpg
+    alt: Mont-Saint-Michel at sunrise
+  - entityId: france
+    role: urban
+    commonsTitle: Pont du Gard BLS.jpg
+    alt: The Pont du Gard Roman aqueduct
+
+  # --- Singapore ---
+  - entityId: singapore
+    role: hero
+    commonsTitle: Marina Bay Sands in the evening - 20101120.jpg
+    alt: Marina Bay Sands in the evening
+  - entityId: singapore
+    role: urban
+    commonsTitle: Supertree Grove, Gardens by the Bay, Singapore.jpg
+    alt: Supertree Grove at Gardens by the Bay
+  - entityId: singapore
+    role: architecture
+    commonsTitle: Esplanade Theatres on the Bay Singapore.jpg
+    alt: Esplanade – Theatres on the Bay
+
+  # --- Iceland ---
+  - entityId: iceland
+    role: hero
+    commonsTitle: Gullfoss, Suðurland, Islandia, 2014-08-16, DD 119.JPG
+    alt: Gullfoss waterfall
+  - entityId: iceland
+    role: landscape
+    commonsTitle: Gullfoss, Iceland, 20230501 0949 3809.jpg
+    alt: Gullfoss from the viewing path
+  - entityId: iceland
+    role: nature
+    commonsTitle: Jökulsárlón, Iceland.jpg
+    alt: Icebergs at Jökulsárlón
+
+  # --- Holy See ---
+  - entityId: holy-see
+    role: hero
+    commonsTitle: St. Peter's Basilica, Vatican City.jpg
+    alt: St. Peter's Basilica and square
+  - entityId: holy-see
+    role: architecture
+    commonsTitle: St Peter's Square, Vatican City - April 2007.jpg
+    alt: St. Peter's Square
+  - entityId: holy-see
+    role: urban
+    commonsTitle: Basilica di San Pietro in Vaticano September 2015-1a.jpg
+    alt: St. Peter's Basilica at dusk
+
+  # --- Palestine ---
+  - entityId: palestine
+    role: hero
+    commonsTitle: Church of the Nativity (7703592746).jpg
+    alt: The Church of the Nativity in Bethlehem
+  - entityId: palestine
+    role: urban
+    commonsTitle: Church of the Nativity (Bethlehem) 04.jpg
+    alt: The Church of the Nativity, Bethlehem
+  - entityId: palestine
+    role: architecture
+    commonsTitle: Church of Saint Catherine of Alexandria at the Basilica of the Nativity, Bethlehem, Palestine2.jpg
+    alt: Saint Catherine of Alexandria at the Nativity basilica
+
+  # --- Indonesia ---
+  - entityId: indonesia
+    role: hero
+    commonsTitle: Borobudur, Java, Indonesia, 20220817 1013 8739.jpg
+    alt: Borobudur temple
+  - entityId: indonesia
+    role: architecture
+    commonsTitle: Borobudur-Nothwest-view.jpg
+    alt: Northwest view of Borobudur
+  - entityId: indonesia
+    role: landscape
+    commonsTitle: Borobudur-Temple-Park Indonesia Stupas-of-Borobudur-01.jpg
+    alt: Stupas at Borobudur
+  - entityId: indonesia
+    role: urban
+    commonsTitle: Borobudur-Temple-Park Indonesia Stupas-of-Borobudur-12.jpg
+    alt: Concentric stupas of Borobudur
+
+  # --- Tuvalu ---
+  - entityId: tuvalu
+    role: hero
+    commonsTitle: Tuvalu Funafuti Atoll from the Airplane.jpg
+    alt: Funafuti atoll from the air
+  - entityId: tuvalu
+    role: landscape
+    commonsTitle: Tuvalu Funafuti atoll beach.jpg
+    alt: A beach on Funafuti
+
+  # --- China ---
+  - entityId: china
+    role: hero
+    commonsTitle: The Great Wall of China at Jinshanling.jpg
+    alt: The Great Wall at Jinshanling
+  - entityId: china
+    role: architecture
+    commonsTitle: 20090529 Great Wall 8185.jpg
+    alt: A watchtower on the Great Wall
+  - entityId: china
+    role: landscape
+    commonsTitle: GreatWall6.jpg
+    alt: The Great Wall following a ridge
+  - entityId: china
+    role: urban
+    commonsTitle: 20090529 Great Wall 8219.jpg
+    alt: Walkers on the Great Wall
+
+  # --- South Africa ---
+  - entityId: south-africa
+    role: hero
+    commonsTitle: Cape Town (ZA), Table Mountain -- 2024 -- 2825.jpg
+    alt: Table Mountain above Cape Town
+  - entityId: south-africa
+    role: urban
+    commonsTitle: Cape Town (ZA), Table Mountain -- 2024 -- 2822.jpg
+    alt: Table Mountain from the city
+  - entityId: south-africa
+    role: landscape
+    commonsTitle: Cape of Good Hope.jpg
+    alt: The Cape of Good Hope
+  - entityId: south-africa
+    role: nature
+    commonsTitle: Blyde River Canyon.jpg
+    alt: Blyde River Canyon

@@ -1,0 +1,14 @@
+UNESCO Institute for Statistics (UIS) Bulk Data Download Service snapshots
+in this directory — including zip archives, extracted CSV, and API fallback
+JSON — are licensed under Creative Commons Attribution-ShareAlike 3.0 IGO
+(CC BY-SA 3.0 IGO):
+
+https://creativecommons.org/licenses/by-sa/3.0/igo/
+
+These files are isolated from the rest of the Geo Index repository so that
+ShareAlike obligations do not apply to original Geo Index source code (MIT)
+or first-party editorial copy (CC BY 4.0). Do not copy UIS commentary,
+methodology prose, or other UIS narrative text into the site.
+
+Derived numeric observations in data/generated/ are a compilation of facts.
+Each valued UIS observation carries licenseId `cc-by-sa-3.0-igo`.

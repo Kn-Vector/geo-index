@@ -1,0 +1,23 @@
+:root {
+  --color-paper: #f4efe6;
+  --color-paper-raised: #fbf7f0;
+  --color-ink: #1b1712;
+  --color-rule: #c9c0b1;
+  --color-muted: #6d675c;
+  --color-water: #7d96aa;
+  --color-water-deep: #5e7a90;
+  --color-accent: #3f5c4a;
+  --font-display: "Source Serif 4 Variable", "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --font-ui: "Source Sans 3 Variable", "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --measure: 42rem;
+  --page-gutter: clamp(1.25rem, 4vw, 3rem);
+  --rule: 1px solid var(--color-rule);
+  --radius: 2px;
+  --focus: 2px solid var(--color-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion: 0;
+  }
+}

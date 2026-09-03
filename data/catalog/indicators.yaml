@@ -1,0 +1,835 @@
+version: 1
+topics:
+  - people
+  - economy
+  - development
+  - health
+  - education
+  - work
+  - technology
+  - infrastructure
+  - environment
+# Headline + WPP demography + WDI economy/health-lite + HDR/UIS/ILO/IMF/OWID.
+indicators:
+  # --- Headlines ---
+  - id: population
+    label: Population
+    shortLabel: Population
+    unit: persons
+    topics: [people]
+    preferredSource: un-wpp
+    sourceIndicatorId: TPopulation1Jan
+    fallbacks:
+      - sourceId: world-bank-wdi
+        sourceIndicatorId: SP.POP.TOTL
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: true
+    format: compact-integer
+    missingPolicy: em-dash
+    headline: true
+  - id: gdp
+    label: Gross domestic product
+    shortLabel: GDP
+    unit: current US$
+    topics: [economy]
+    preferredSource: world-bank-wdi
+    sourceIndicatorId: NY.GDP.MKTP.CD
+    fallbacks:
+      - sourceId: imf-weo
+        sourceIndicatorId: NGDPD
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: usd
+    missingPolicy: em-dash
+    headline: true
+  - id: gdp-per-capita
+    label: GDP per capita
+    shortLabel: GDP / capita
+    unit: current US$
+    topics: [economy]
+    preferredSource: world-bank-wdi
+    sourceIndicatorId: NY.GDP.PCAP.CD
+    fallbacks:
+      - sourceId: imf-weo
+        sourceIndicatorId: NGDPDPC
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: usd
+    missingPolicy: em-dash
+    headline: true
+  - id: hdi
+    label: Human Development Index
+    shortLabel: HDI
+    unit: index (0–1)
+    topics: [development]
+    preferredSource: undp-hdr
+    sourceIndicatorId: hdi
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: 3-decimal
+    missingPolicy: no-comparable-data
+    headline: true
+  - id: life-expectancy
+    label: Life expectancy at birth
+    shortLabel: Life expectancy
+    unit: years
+    topics: [health, people]
+    preferredSource: un-wpp
+    sourceIndicatorId: LEx
+    fallbacks:
+      - sourceId: world-bank-wdi
+        sourceIndicatorId: SP.DYN.LE00.IN
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: true
+    format: 1-decimal
+    missingPolicy: em-dash
+    headline: true
+  - id: land-area
+    label: Land area
+    shortLabel: Area
+    unit: km²
+    topics: [environment]
+    preferredSource: world-bank-wdi
+    sourceIndicatorId: AG.LND.TOTL.K2
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: compact-integer
+    missingPolicy: em-dash
+    headline: true
+    coverageThreshold: 0.7
+
+  # --- WPP demography ---
+  - id: population-july
+    label: Population (1 July)
+    shortLabel: Population (July)
+    unit: persons
+    topics: [people]
+    preferredSource: un-wpp
+    sourceIndicatorId: TPopulation1July
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: true
+    format: compact-integer
+    missingPolicy: em-dash
+  - id: population-growth-rate
+    label: Population growth rate
+    shortLabel: Pop. growth
+    unit: percent
+    topics: [people]
+    preferredSource: un-wpp
+    sourceIndicatorId: PopGrowthRate
+    fallbacks:
+      - sourceId: world-bank-wdi
+        sourceIndicatorId: SP.POP.GROW
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: true
+    format: 1-decimal
+    missingPolicy: em-dash
+  - id: population-density
+    label: Population density
+    shortLabel: Density
+    unit: persons per km²
+    topics: [people]
+    preferredSource: un-wpp
+    sourceIndicatorId: PopDensity
+    fallbacks:
+      - sourceId: world-bank-wdi
+        sourceIndicatorId: EN.POP.DNST
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: true
+    format: 1-decimal
+    missingPolicy: em-dash
+  - id: median-age
+    label: Median age
+    shortLabel: Median age
+    unit: years
+    topics: [people]
+    preferredSource: un-wpp
+    sourceIndicatorId: MedianAgePop
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: true
+    format: 1-decimal
+    missingPolicy: em-dash
+  - id: sex-ratio
+    label: Population sex ratio
+    shortLabel: Sex ratio
+    unit: males per 100 females
+    topics: [people]
+    preferredSource: un-wpp
+    sourceIndicatorId: PopSexRatio
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: true
+    format: 1-decimal
+    missingPolicy: em-dash
+  - id: total-fertility-rate
+    label: Total fertility rate
+    shortLabel: TFR
+    unit: live births per woman
+    topics: [people]
+    preferredSource: un-wpp
+    sourceIndicatorId: TFR
+    fallbacks:
+      - sourceId: world-bank-wdi
+        sourceIndicatorId: SP.DYN.TFRT.IN
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: true
+    format: 1-decimal
+    missingPolicy: em-dash
+  - id: crude-birth-rate
+    label: Crude birth rate
+    shortLabel: Birth rate
+    unit: per 1,000 population
+    topics: [people]
+    preferredSource: un-wpp
+    sourceIndicatorId: CBR
+    fallbacks:
+      - sourceId: world-bank-wdi
+        sourceIndicatorId: SP.DYN.CBRT.IN
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: true
+    format: 1-decimal
+    missingPolicy: em-dash
+  - id: crude-death-rate
+    label: Crude death rate
+    shortLabel: Death rate
+    unit: per 1,000 population
+    topics: [people, health]
+    preferredSource: un-wpp
+    sourceIndicatorId: CDR
+    fallbacks:
+      - sourceId: world-bank-wdi
+        sourceIndicatorId: SP.DYN.CDRT.IN
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: true
+    format: 1-decimal
+    missingPolicy: em-dash
+  - id: life-expectancy-male
+    label: Life expectancy at birth (male)
+    shortLabel: Life exp. male
+    unit: years
+    topics: [health, people]
+    preferredSource: un-wpp
+    sourceIndicatorId: LExMale
+    fallbacks:
+      - sourceId: world-bank-wdi
+        sourceIndicatorId: SP.DYN.LE00.MA.IN
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: true
+    format: 1-decimal
+    missingPolicy: em-dash
+  - id: life-expectancy-female
+    label: Life expectancy at birth (female)
+    shortLabel: Life exp. female
+    unit: years
+    topics: [health, people]
+    preferredSource: un-wpp
+    sourceIndicatorId: LExFemale
+    fallbacks:
+      - sourceId: world-bank-wdi
+        sourceIndicatorId: SP.DYN.LE00.FE.IN
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: true
+    format: 1-decimal
+    missingPolicy: em-dash
+  - id: infant-mortality
+    label: Infant mortality rate
+    shortLabel: Infant mortality
+    unit: per 1,000 live births
+    topics: [health]
+    preferredSource: un-wpp
+    sourceIndicatorId: IMR
+    fallbacks:
+      - sourceId: world-bank-wdi
+        sourceIndicatorId: SP.DYN.IMRT.IN
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: true
+    format: 1-decimal
+    missingPolicy: em-dash
+  - id: under-five-mortality
+    label: Under-five mortality rate
+    shortLabel: U5MR
+    unit: per 1,000 live births
+    topics: [health]
+    preferredSource: un-wpp
+    sourceIndicatorId: Q5
+    fallbacks:
+      - sourceId: world-bank-wdi
+        sourceIndicatorId: SH.DYN.MORT
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: true
+    format: 1-decimal
+    missingPolicy: em-dash
+  - id: net-migration
+    label: Net number of migrants
+    shortLabel: Net migration
+    unit: persons
+    topics: [people]
+    preferredSource: un-wpp
+    sourceIndicatorId: NetMigrations
+    fallbacks:
+      - sourceId: world-bank-wdi
+        sourceIndicatorId: SM.POP.NETM
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: true
+    format: compact-integer
+    missingPolicy: em-dash
+  - id: net-migration-rate
+    label: Net migration rate
+    shortLabel: Migration rate
+    unit: per 1,000 population
+    topics: [people]
+    preferredSource: un-wpp
+    sourceIndicatorId: CNMR
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: true
+    format: 1-decimal
+    missingPolicy: em-dash
+
+  # --- WDI economy ---
+  - id: gdp-ppp
+    label: GDP, PPP
+    shortLabel: GDP (PPP)
+    unit: current international $
+    topics: [economy]
+    preferredSource: world-bank-wdi
+    sourceIndicatorId: NY.GDP.MKTP.PP.CD
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: intl-dollar
+    missingPolicy: em-dash
+  - id: gdp-per-capita-ppp
+    label: GDP per capita, PPP
+    shortLabel: GDP / capita (PPP)
+    unit: current international $
+    topics: [economy]
+    preferredSource: world-bank-wdi
+    sourceIndicatorId: NY.GDP.PCAP.PP.CD
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: intl-dollar
+    missingPolicy: em-dash
+  - id: gdp-growth
+    label: GDP growth
+    shortLabel: GDP growth
+    unit: percent
+    topics: [economy]
+    preferredSource: world-bank-wdi
+    sourceIndicatorId: NY.GDP.MKTP.KD.ZG
+    fallbacks:
+      - sourceId: imf-weo
+        sourceIndicatorId: NGDP_RPCH
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: true
+    format: 1-decimal
+    missingPolicy: em-dash
+  - id: gni-per-capita
+    label: GNI per capita
+    shortLabel: GNI / capita
+    unit: current US$
+    topics: [economy]
+    preferredSource: world-bank-wdi
+    sourceIndicatorId: NY.GNP.PCAP.CD
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: usd
+    missingPolicy: em-dash
+  - id: inflation-cpi
+    label: Inflation, consumer prices
+    shortLabel: Inflation
+    unit: percent
+    topics: [economy]
+    preferredSource: world-bank-wdi
+    sourceIndicatorId: FP.CPI.TOTL.ZG
+    fallbacks:
+      - sourceId: imf-weo
+        sourceIndicatorId: PCPIPCH
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: true
+    format: 1-decimal
+    missingPolicy: em-dash
+  - id: unemployment
+    label: Unemployment, total
+    shortLabel: Unemployment
+    unit: percent of labour force
+    topics: [work, economy]
+    preferredSource: ilo-stat
+    sourceIndicatorId: UNE_2EAP_SEX_AGE_RT
+    fallbacks:
+      - sourceId: world-bank-wdi
+        sourceIndicatorId: SL.UEM.TOTL.ZS
+      - sourceId: imf-weo
+        sourceIndicatorId: LUR
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: true
+    format: 1-decimal
+    missingPolicy: em-dash
+  - id: trade-pct-gdp
+    label: Trade
+    shortLabel: Trade
+    unit: percent of GDP
+    topics: [economy]
+    preferredSource: world-bank-wdi
+    sourceIndicatorId: NE.TRD.GNFS.ZS
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: 1-decimal
+    missingPolicy: em-dash
+
+  # --- WDI health-lite / people ---
+  - id: maternal-mortality
+    label: Maternal mortality ratio
+    shortLabel: Maternal mortality
+    unit: per 100,000 live births
+    topics: [health]
+    preferredSource: world-bank-wdi
+    sourceIndicatorId: SH.STA.MMRT
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: compact-integer
+    missingPolicy: em-dash
+  - id: measles-immunization
+    label: Immunization, measles
+    shortLabel: Measles immunization
+    unit: percent of children ages 12–23 months
+    topics: [health]
+    preferredSource: world-bank-wdi
+    sourceIndicatorId: SH.IMM.MEAS
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: percent
+    missingPolicy: em-dash
+  - id: health-expenditure-pct-gdp
+    label: Current health expenditure
+    shortLabel: Health expenditure
+    unit: percent of GDP
+    topics: [health]
+    preferredSource: world-bank-wdi
+    sourceIndicatorId: SH.XPD.CHEX.GD.ZS
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: 1-decimal
+    missingPolicy: em-dash
+  - id: undernourishment
+    label: Prevalence of undernourishment
+    shortLabel: Undernourishment
+    unit: percent of population
+    topics: [health]
+    preferredSource: world-bank-wdi
+    sourceIndicatorId: SN.ITK.DEFC.ZS
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: 1-decimal
+    missingPolicy: no-comparable-data
+  - id: urban-population-pct
+    label: Urban population
+    shortLabel: Urban
+    unit: percent of population
+    topics: [people]
+    preferredSource: world-bank-wdi
+    sourceIndicatorId: SP.URB.TOTL.IN.ZS
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: percent
+    missingPolicy: em-dash
+  - id: age-0-14-pct
+    label: Population ages 0–14
+    shortLabel: Ages 0–14
+    unit: percent of population
+    topics: [people]
+    preferredSource: world-bank-wdi
+    sourceIndicatorId: SP.POP.0014.TO.ZS
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: percent
+    missingPolicy: em-dash
+  - id: age-15-64-pct
+    label: Population ages 15–64
+    shortLabel: Ages 15–64
+    unit: percent of population
+    topics: [people]
+    preferredSource: world-bank-wdi
+    sourceIndicatorId: SP.POP.1564.TO.ZS
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: percent
+    missingPolicy: em-dash
+  - id: age-65-plus-pct
+    label: Population ages 65 and above
+    shortLabel: Ages 65+
+    unit: percent of population
+    topics: [people]
+    preferredSource: world-bank-wdi
+    sourceIndicatorId: SP.POP.65UP.TO.ZS
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: percent
+    missingPolicy: em-dash
+  - id: surface-area
+    label: Surface area
+    shortLabel: Surface area
+    unit: km²
+    topics: [environment]
+    preferredSource: world-bank-wdi
+    sourceIndicatorId: AG.SRF.TOTL.K2
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: compact-integer
+    missingPolicy: em-dash
+  - id: electricity-access
+    label: Access to electricity
+    shortLabel: Electricity
+    unit: percent of population
+    topics: [infrastructure]
+    preferredSource: world-bank-wdi
+    sourceIndicatorId: EG.ELC.ACCS.ZS
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: percent
+    missingPolicy: omit-section
+    coverageThreshold: 0.7
+  - id: internet-users
+    label: Individuals using the Internet
+    shortLabel: Internet users
+    unit: percent of population
+    topics: [technology]
+    preferredSource: world-bank-wdi
+    sourceIndicatorId: IT.NET.USER.ZS
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: percent
+    missingPolicy: omit-section
+    coverageThreshold: 0.7
+  - id: forest-area-pct
+    label: Forest area
+    shortLabel: Forest
+    unit: percent of land area
+    topics: [environment]
+    preferredSource: world-bank-wdi
+    sourceIndicatorId: AG.LND.FRST.ZS
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: percent
+    missingPolicy: em-dash
+
+  # --- UNDP HDR composite indices (latest recalculated series) ---
+  - id: ihdi
+    label: Inequality-adjusted Human Development Index
+    shortLabel: IHDI
+    unit: index (0–1)
+    topics: [development]
+    preferredSource: undp-hdr
+    sourceIndicatorId: ihdi
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: 3-decimal
+    missingPolicy: no-comparable-data
+  - id: gdi
+    label: Gender Development Index
+    shortLabel: GDI
+    unit: index (female-to-male HDI ratio)
+    topics: [development]
+    preferredSource: undp-hdr
+    sourceIndicatorId: gdi
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: 3-decimal
+    missingPolicy: no-comparable-data
+  - id: gii
+    label: Gender Inequality Index
+    shortLabel: GII
+    unit: index (0–1)
+    topics: [development]
+    preferredSource: undp-hdr
+    sourceIndicatorId: gii
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: 3-decimal
+    missingPolicy: no-comparable-data
+  - id: mpi
+    label: Multidimensional Poverty Index
+    shortLabel: MPI
+    unit: index (0–1)
+    topics: [development]
+    preferredSource: undp-hdr
+    sourceIndicatorId: mpi
+    fallbacks: []
+    frequency: irregular
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: 3-decimal
+    missingPolicy: no-comparable-data
+
+  # --- UNESCO UIS education ---
+  - id: literacy-rate-adult
+    label: Adult literacy rate
+    shortLabel: Adult literacy
+    unit: percent of population ages 15+
+    topics: [education]
+    preferredSource: unesco-uis
+    sourceIndicatorId: LR.AG15T99
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: percent
+    missingPolicy: no-comparable-data
+  - id: literacy-rate-youth
+    label: Youth literacy rate
+    shortLabel: Youth literacy
+    unit: percent of population ages 15–24
+    topics: [education]
+    preferredSource: unesco-uis
+    sourceIndicatorId: LR.AG15T24
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: percent
+    missingPolicy: no-comparable-data
+  - id: mean-years-schooling
+    label: Mean years of schooling
+    shortLabel: Mean years school
+    unit: years
+    topics: [education]
+    preferredSource: unesco-uis
+    sourceIndicatorId: MYS.1T8.AG25T99
+    fallbacks:
+      - sourceId: undp-hdr
+        sourceIndicatorId: mys
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: 1-decimal
+    missingPolicy: no-comparable-data
+  - id: expected-years-schooling
+    label: School life expectancy
+    shortLabel: School life exp.
+    unit: years
+    topics: [education]
+    preferredSource: unesco-uis
+    sourceIndicatorId: SLE.1T8
+    fallbacks:
+      - sourceId: undp-hdr
+        sourceIndicatorId: eys
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: 1-decimal
+    missingPolicy: no-comparable-data
+
+  # --- ILOSTAT labour ---
+  - id: labor-force-participation
+    label: Labour force participation rate
+    shortLabel: LFPR
+    unit: percent of population ages 15+
+    topics: [work]
+    preferredSource: ilo-stat
+    sourceIndicatorId: EAP_2WAP_SEX_AGE_RT
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: true
+    format: 1-decimal
+    missingPolicy: em-dash
+  - id: employment-to-population
+    label: Employment-to-population ratio
+    shortLabel: Employment ratio
+    unit: percent of population ages 15+
+    topics: [work]
+    preferredSource: ilo-stat
+    sourceIndicatorId: EMP_2WAP_SEX_AGE_RT
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: true
+    format: 1-decimal
+    missingPolicy: em-dash
+  - id: youth-unemployment
+    label: Youth unemployment rate
+    shortLabel: Youth unemployment
+    unit: percent of labour force ages 15–24
+    topics: [work]
+    preferredSource: ilo-stat
+    sourceIndicatorId: UNE_2EAP_SEX_AGE_RT
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: true
+    format: 1-decimal
+    missingPolicy: em-dash
+
+  # --- IMF WEO fiscal ---
+  - id: fiscal-balance-pct-gdp
+    label: General government net lending/borrowing
+    shortLabel: Fiscal balance
+    unit: percent of GDP
+    topics: [economy]
+    preferredSource: imf-weo
+    sourceIndicatorId: GGXCNL_NGDP
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: true
+    format: 1-decimal
+    missingPolicy: em-dash
+  - id: government-debt-pct-gdp
+    label: General government gross debt
+    shortLabel: Gov. debt
+    unit: percent of GDP
+    topics: [economy]
+    preferredSource: imf-weo
+    sourceIndicatorId: GGXWDG_NGDP
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: true
+    format: 1-decimal
+    missingPolicy: em-dash
+
+  # --- OWID / Global Carbon Project (not IEA-EDGAR) ---
+  - id: co2-emissions
+    label: CO₂ emissions
+    shortLabel: CO₂
+    unit: million tonnes
+    topics: [environment]
+    preferredSource: owid-co2
+    sourceIndicatorId: co2
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: compact-integer
+    missingPolicy: em-dash
+  - id: co2-per-capita
+    label: CO₂ emissions per capita
+    shortLabel: CO₂ / capita
+    unit: tonnes per person
+    topics: [environment]
+    preferredSource: owid-co2
+    sourceIndicatorId: co2_per_capita
+    fallbacks: []
+    frequency: annual
+    comparable: true
+    rankable: true
+    projectionPossible: false
+    format: 1-decimal
+    missingPolicy: em-dash

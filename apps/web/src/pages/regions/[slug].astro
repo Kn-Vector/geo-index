@@ -1,0 +1,88 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { classificationLabel, loadRegions } from "../../lib/catalog.ts";
+import type { Entity } from "@geo-index/schema";
+
+export function getStaticPaths() {
+  const regions = loadRegions();
+  const bySlug = new Map<string, (typeof regions)[number]>();
+  for (const region of regions) {
+    const existing = bySlug.get(region.slug);
+    if (!existing || region.entities.length > existing.entities.length) bySlug.set(region.slug, region);
+  }
+  return [...bySlug.values()].map((region) => ({
+    params: { slug: region.slug },
+    props: { region },
+  }));
+}
+
+interface Props {
+  region: {
+    slug: string;
+    m49: string;
+    name: string;
+    kind: "region" | "subregion" | "intermediate";
+    entities: Entity[];
+  };
+}
+
+const { region } = Astro.props;
+const kindLabel = region.kind === "region" ? "M49 region" : region.kind === "subregion" ? "M49 subregion" : "M49 intermediate region";
+const sorted = region.entities.slice().sort((a, b) => a.commonName.localeCompare(b.commonName, "en"));
+---
+
+<BaseLayout
+  title={`${region.name} — Geo Index`}
+  description={`${kindLabel} ${region.name} (M49 ${region.m49}): ${sorted.length} Geo Index profiles.`}
+  canonical={`/regions/${region.slug}/`}
+>
+  <nav class="crumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Geo Index</a></li>
+      <li><a href="/regions/">Regions</a></li>
+      <li aria-current="page">{region.name}</li>
+    </ol>
+  </nav>
+  <h1>{region.name}</h1>
+  <p class="lede">
+    {kindLabel}, UN M49 code {region.m49}. {sorted.length} profiles. Classification is descriptive.
+  </p>
+  <ul class="entity-list">
+    {
+      sorted.map((e) => (
+        <li>
+          <a href={`/countries/${e.id}/`}>{e.commonName}</a>
+          <span class="muted"> {classificationLabel(e.classification)}</span>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>
+
+<style>
+  .crumb ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.7rem;
+    list-style: none;
+    margin: 0 0 1.5rem;
+    padding: 0;
+    font-size: 0.9rem;
+    color: var(--color-muted);
+  }
+  .crumb li:not(:last-child)::after {
+    content: "/";
+    margin-left: 0.7rem;
+    color: var(--color-rule);
+  }
+  .entity-list {
+    columns: 2;
+    column-gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+  }
+  .entity-list li {
+    break-inside: avoid;
+    padding: 0.12rem 0;
+  }
+</style>

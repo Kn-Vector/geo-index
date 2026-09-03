@@ -1,0 +1,331 @@
+{
+  "generatedAt": "2026-09-03T02:57:31.983Z",
+  "core": 195,
+  "profiledAdditional": 46,
+  "byIndicator": [
+    {
+      "indicatorId": "population",
+      "coreWithValue": 195,
+      "core": 195,
+      "fraction": 1
+    },
+    {
+      "indicatorId": "gdp",
+      "coreWithValue": 193,
+      "core": 195,
+      "fraction": 0.9897435897435898
+    },
+    {
+      "indicatorId": "gdp-per-capita",
+      "coreWithValue": 193,
+      "core": 195,
+      "fraction": 0.9897435897435898
+    },
+    {
+      "indicatorId": "hdi",
+      "coreWithValue": 192,
+      "core": 195,
+      "fraction": 0.9846153846153847
+    },
+    {
+      "indicatorId": "life-expectancy",
+      "coreWithValue": 195,
+      "core": 195,
+      "fraction": 1
+    },
+    {
+      "indicatorId": "land-area",
+      "coreWithValue": 194,
+      "core": 195,
+      "fraction": 0.9948717948717949
+    },
+    {
+      "indicatorId": "population-july",
+      "coreWithValue": 195,
+      "core": 195,
+      "fraction": 1
+    },
+    {
+      "indicatorId": "population-growth-rate",
+      "coreWithValue": 195,
+      "core": 195,
+      "fraction": 1
+    },
+    {
+      "indicatorId": "population-density",
+      "coreWithValue": 195,
+      "core": 195,
+      "fraction": 1
+    },
+    {
+      "indicatorId": "median-age",
+      "coreWithValue": 195,
+      "core": 195,
+      "fraction": 1
+    },
+    {
+      "indicatorId": "sex-ratio",
+      "coreWithValue": 195,
+      "core": 195,
+      "fraction": 1
+    },
+    {
+      "indicatorId": "total-fertility-rate",
+      "coreWithValue": 195,
+      "core": 195,
+      "fraction": 1
+    },
+    {
+      "indicatorId": "crude-birth-rate",
+      "coreWithValue": 195,
+      "core": 195,
+      "fraction": 1
+    },
+    {
+      "indicatorId": "crude-death-rate",
+      "coreWithValue": 195,
+      "core": 195,
+      "fraction": 1
+    },
+    {
+      "indicatorId": "life-expectancy-male",
+      "coreWithValue": 195,
+      "core": 195,
+      "fraction": 1
+    },
+    {
+      "indicatorId": "life-expectancy-female",
+      "coreWithValue": 195,
+      "core": 195,
+      "fraction": 1
+    },
+    {
+      "indicatorId": "infant-mortality",
+      "coreWithValue": 195,
+      "core": 195,
+      "fraction": 1
+    },
+    {
+      "indicatorId": "under-five-mortality",
+      "coreWithValue": 195,
+      "core": 195,
+      "fraction": 1
+    },
+    {
+      "indicatorId": "net-migration",
+      "coreWithValue": 195,
+      "core": 195,
+      "fraction": 1
+    },
+    {
+      "indicatorId": "net-migration-rate",
+      "coreWithValue": 195,
+      "core": 195,
+      "fraction": 1
+    },
+    {
+      "indicatorId": "gdp-ppp",
+      "coreWithValue": 190,
+      "core": 195,
+      "fraction": 0.9743589743589743
+    },
+    {
+      "indicatorId": "gdp-per-capita-ppp",
+      "coreWithValue": 190,
+      "core": 195,
+      "fraction": 0.9743589743589743
+    },
+    {
+      "indicatorId": "gdp-growth",
+      "coreWithValue": 193,
+      "core": 195,
+      "fraction": 0.9897435897435898
+    },
+    {
+      "indicatorId": "gni-per-capita",
+      "coreWithValue": 192,
+      "core": 195,
+      "fraction": 0.9846153846153847
+    },
+    {
+      "indicatorId": "inflation-cpi",
+      "coreWithValue": 191,
+      "core": 195,
+      "fraction": 0.9794871794871794
+    },
+    {
+      "indicatorId": "unemployment",
+      "coreWithValue": 183,
+      "core": 195,
+      "fraction": 0.9384615384615385
+    },
+    {
+      "indicatorId": "trade-pct-gdp",
+      "coreWithValue": 178,
+      "core": 195,
+      "fraction": 0.9128205128205128
+    },
+    {
+      "indicatorId": "maternal-mortality",
+      "coreWithValue": 193,
+      "core": 195,
+      "fraction": 0.9897435897435898
+    },
+    {
+      "indicatorId": "measles-immunization",
+      "coreWithValue": 193,
+      "core": 195,
+      "fraction": 0.9897435897435898
+    },
+    {
+      "indicatorId": "health-expenditure-pct-gdp",
+      "coreWithValue": 193,
+      "core": 195,
+      "fraction": 0.9897435897435898
+    },
+    {
+      "indicatorId": "undernourishment",
+      "coreWithValue": 165,
+      "core": 195,
+      "fraction": 0.8461538461538461
+    },
+    {
+      "indicatorId": "urban-population-pct",
+      "coreWithValue": 194,
+      "core": 195,
+      "fraction": 0.9948717948717949
+    },
+    {
+      "indicatorId": "age-0-14-pct",
+      "coreWithValue": 194,
+      "core": 195,
+      "fraction": 0.9948717948717949
+    },
+    {
+      "indicatorId": "age-15-64-pct",
+      "coreWithValue": 194,
+      "core": 195,
+      "fraction": 0.9948717948717949
+    },
+    {
+      "indicatorId": "age-65-plus-pct",
+      "coreWithValue": 194,
+      "core": 195,
+      "fraction": 0.9948717948717949
+    },
+    {
+      "indicatorId": "surface-area",
+      "coreWithValue": 194,
+      "core": 195,
+      "fraction": 0.9948717948717949
+    },
+    {
+      "indicatorId": "electricity-access",
+      "coreWithValue": 194,
+      "core": 195,
+      "fraction": 0.9948717948717949
+    },
+    {
+      "indicatorId": "internet-users",
+      "coreWithValue": 194,
+      "core": 195,
+      "fraction": 0.9948717948717949
+    },
+    {
+      "indicatorId": "forest-area-pct",
+      "coreWithValue": 194,
+      "core": 195,
+      "fraction": 0.9948717948717949
+    },
+    {
+      "indicatorId": "ihdi",
+      "coreWithValue": 169,
+      "core": 195,
+      "fraction": 0.8666666666666667
+    },
+    {
+      "indicatorId": "gdi",
+      "coreWithValue": 183,
+      "core": 195,
+      "fraction": 0.9384615384615385
+    },
+    {
+      "indicatorId": "gii",
+      "coreWithValue": 172,
+      "core": 195,
+      "fraction": 0.882051282051282
+    },
+    {
+      "indicatorId": "mpi",
+      "coreWithValue": 0,
+      "core": 195,
+      "fraction": 0
+    },
+    {
+      "indicatorId": "literacy-rate-adult",
+      "coreWithValue": 163,
+      "core": 195,
+      "fraction": 0.8358974358974359
+    },
+    {
+      "indicatorId": "literacy-rate-youth",
+      "coreWithValue": 164,
+      "core": 195,
+      "fraction": 0.841025641025641
+    },
+    {
+      "indicatorId": "mean-years-schooling",
+      "coreWithValue": 193,
+      "core": 195,
+      "fraction": 0.9897435897435898
+    },
+    {
+      "indicatorId": "expected-years-schooling",
+      "coreWithValue": 194,
+      "core": 195,
+      "fraction": 0.9948717948717949
+    },
+    {
+      "indicatorId": "labor-force-participation",
+      "coreWithValue": 179,
+      "core": 195,
+      "fraction": 0.9179487179487179
+    },
+    {
+      "indicatorId": "employment-to-population",
+      "coreWithValue": 179,
+      "core": 195,
+      "fraction": 0.9179487179487179
+    },
+    {
+      "indicatorId": "youth-unemployment",
+      "coreWithValue": 179,
+      "core": 195,
+      "fraction": 0.9179487179487179
+    },
+    {
+      "indicatorId": "fiscal-balance-pct-gdp",
+      "coreWithValue": 190,
+      "core": 195,
+      "fraction": 0.9743589743589743
+    },
+    {
+      "indicatorId": "government-debt-pct-gdp",
+      "coreWithValue": 187,
+      "core": 195,
+      "fraction": 0.958974358974359
+    },
+    {
+      "indicatorId": "co2-emissions",
+      "coreWithValue": 192,
+      "core": 195,
+      "fraction": 0.9846153846153847
+    },
+    {
+      "indicatorId": "co2-per-capita",
+      "coreWithValue": 192,
+      "core": 195,
+      "fraction": 0.9846153846153847
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  X-Frame-Options: SAMEORIGIN
+  Cross-Origin-Opener-Policy: same-origin-allow-popups
+
+/geo/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/silhouettes/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/flags/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/media/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/og/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/pagefind/*
+  Cache-Control: public, max-age=3600

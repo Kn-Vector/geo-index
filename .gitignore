@@ -1,0 +1,79 @@
+# Dependencies and build output
+node_modules/
+dist/
+.astro/
+.vite/
+coverage/
+*.tsbuildinfo
+
+# Logs and OS
+*.log
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
+
+# Large upstream snapshots — checksums and READMEs stay tracked
+data/raw/**/*.zip
+data/raw/**/*.gz
+data/raw/**/*.7z
+data/raw/**/*.xlsx
+data/raw/**/*.xls
+data/raw/**/*.parquet
+data/raw/**/*.shp
+data/raw/**/*.shx
+data/raw/**/*.dbf
+data/raw/**/*.prj
+data/raw/**/*.cpg
+data/raw/**/*.sbn
+data/raw/**/*.sbx
+data/raw/wdi/**
+!data/raw/wdi/.gitkeep
+!data/raw/wdi/**/*.sha256
+!data/raw/wdi/**/README.md
+data/raw/wpp/**
+!data/raw/wpp/.gitkeep
+!data/raw/wpp/**/*.sha256
+!data/raw/wpp/**/README.md
+data/raw/unesco/**
+!data/raw/unesco/**/LICENSE
+!data/raw/unesco/**/*.sha256
+!data/raw/unesco/**/README.md
+data/raw/hdr/**
+!data/raw/hdr/.gitkeep
+!data/raw/hdr/**/*.sha256
+!data/raw/hdr/**/README.md
+data/raw/ilo/**
+!data/raw/ilo/.gitkeep
+!data/raw/ilo/**/*.sha256
+!data/raw/ilo/**/README.md
+data/raw/imf/**
+!data/raw/imf/.gitkeep
+!data/raw/imf/**/*.sha256
+!data/raw/imf/**/README.md
+data/raw/owid/**
+!data/raw/owid/.gitkeep
+!data/raw/owid/**/*.sha256
+!data/raw/owid/**/README.md
+
+# Normalized dumps (regenerate with data:normalize)
+data/normalized/**
+!data/normalized/README.md
+
+# OG cards are produced at build
+apps/web/public/og/*.png
+apps/web/public/og/*.svg
+
+# Wrangler / release bundles
+.wrangler/
+.dev.vars
+dist-release/
+
+data/raw/commons/**
+!data/raw/commons/.gitkeep
+
+# Editors
+.idea/
+.vscode/
+*.swp

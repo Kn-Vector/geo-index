@@ -1,0 +1,117 @@
+---
+import type { DisplayStat } from "../../lib/profile/format.ts";
+
+interface Props {
+  stats: Array<DisplayStat & { comparison?: string }>;
+}
+
+const { stats } = Astro.props;
+---
+
+{
+  stats.length > 0 ? (
+    <dl class="stat-list">
+      {stats.map((stat) => (
+        <div class:list={["stat-row", stat.missing && "stat-row--missing", stat.projection && "stat-row--projection"]}>
+          <div class="stat-row-main">
+            <dt>
+              {stat.label}
+              {stat.projection ? <span class="proj-mark">Projection</span> : null}
+            </dt>
+            <dd>
+              <span class="stat-row-value">{stat.text}</span>
+              {stat.unit && !stat.missing ? <span class="muted"> {stat.unit}</span> : null}
+              <p class="stat-row-meta muted">
+                {stat.missing ? (
+                  stat.missingKind === "no-comparable-data" ? (
+                    "No internationally comparable figure in this build."
+                  ) : stat.missingKind === "unavailable" ? (
+                    "Latest observation unavailable."
+                  ) : (
+                    "Figure not published for this entity."
+                  )
+                ) : (
+                  <>
+                    {stat.year}
+                    {stat.sourceLabel ? ` · ${stat.sourceLabel}` : ""}
+                    {stat.statusLabel ? ` · ${stat.statusLabel}` : ""}
+                    {stat.dataset ? ` · ${stat.dataset}` : ""}
+                  </>
+                )}
+              </p>
+              {stat.comparison ? <p class="stat-row-compare">{stat.comparison}</p> : null}
+            </dd>
+          </div>
+        </div>
+      ))}
+    </dl>
+  ) : null
+}
+
+<style>
+  .stat-list {
+    display: grid;
+    gap: 0;
+    margin: 1rem 0 1.5rem;
+    border-bottom: var(--rule);
+  }
+  .stat-row {
+    padding: 0.85rem 0;
+    border-top: var(--rule);
+  }
+  .stat-row-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1rem;
+    align-items: baseline;
+  }
+  .stat-row dt {
+    font-weight: 500;
+    margin: 0;
+  }
+  .stat-row dd {
+    margin: 0;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+  .stat-row-value {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+  }
+  .stat-row-meta,
+  .stat-row-compare {
+    margin: 0.3rem 0 0;
+    font-size: 0.88rem;
+    max-width: none;
+    text-align: left;
+  }
+  .stat-row-compare {
+    color: var(--color-ink);
+  }
+  .proj-mark {
+    display: inline-block;
+    margin-left: 0.45rem;
+    padding: 0 0.35rem;
+    border: 1px dashed var(--color-water-deep);
+    color: var(--color-water-deep);
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-weight: 600;
+    vertical-align: 0.15em;
+  }
+  .stat-row--projection {
+    background-image: repeating-linear-gradient(
+      -56deg,
+      transparent,
+      transparent 6px,
+      color-mix(in srgb, var(--color-water) 12%, transparent) 6px,
+      color-mix(in srgb, var(--color-water) 12%, transparent) 7px
+    );
+  }
+  .stat-row--missing .stat-row-value {
+    color: var(--color-muted);
+    font-family: var(--font-ui);
+    font-size: 1rem;
+  }
+</style>

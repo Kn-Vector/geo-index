@@ -1,0 +1,110 @@
+# Recorded bulk URLs and version pins for etl-core (WPP 2024 + WDI allowlist).
+# Large binaries stay gitignored; SHA256 files live next to the snapshots.
+userAgent: "GeoIndex/0.1 (world atlas ETL; https://github.com/geo-index)"
+asOfYear: 2026
+sources:
+  - id: un-wpp
+    dataset: WPP2024 Demographic Indicators Medium
+    vintage: 2024-revision
+    licenseId: cc-by-3.0-igo
+    # Estimates 1950–2023; medium-variant projections 2024–2100.
+    estimateLastYear: 2023
+    url: https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_Demographic_Indicators_Medium.csv.gz
+    filename: WPP2024_Demographic_Indicators_Medium.csv.gz
+    sha256: 286ac36bb1415e2e1ade03acfef0a29f0e4c087e2f78e38c48f50c5df89082bc
+    lastModified: "2024-12-13T19:11:17Z"
+    locTypeId: "4"
+    notes: >
+      Official UN Population Division bulk CSV (gzip). Join on ISO3_code, then
+      LocID padded to M49 — never Location names. Population/births/deaths/net
+      migration are thousands and are converted to persons on normalize.
+  - id: world-bank-wdi
+    dataset: World Development Indicators
+    vintage: wdi-2026-07-13
+    licenseId: cc-by-4.0
+    # Full WDI_CSV.zip is ~270 MB (Last-Modified 2026-07-15). Default fetch
+    # downloads only allowlisted series as per-indicator CSV zips.
+    bulkUrl: https://databank.worldbank.org/data/download/WDI_CSV.zip
+    bulkResolvedUrl: https://databankfiles.worldbank.org/public/ddpext_download/WDI_CSV.zip
+    seriesUrlTemplate: https://api.worldbank.org/v2/en/indicator/{code}?downloadformat=csv
+    notes: >
+      Per-series CSV zip from the World Bank catalog (not the paginated JSON API,
+      not RestCountries). Filter to indicators.yaml allowlist. Join on Country
+      Code (ISO alpha-3). Empty cells stay null.
+  - id: undp-hdr
+    dataset: HDR 2025 composite indices complete time series
+    vintage: hdr-2025
+    licenseId: cc-by-3.0-igo
+    url: https://hdr.undp.org/sites/default/files/2025_HDR/HDR25_Composite_indices_complete_time_series.csv
+    filename: HDR25_Composite_indices_complete_time_series.csv
+    sha256: 61ed82e5b66c88dfca8ff9fac775c63981ecab6a254862af97acacc41c143117
+    files:
+      - id: mpi-tables
+        url: https://hdr.undp.org/sites/default/files/publications/additional-files/2025-10/2025_gMPI_Table1and2.xlsx
+        filename: 2025_gMPI_Table1and2.xlsx
+        sha256: 0f8080a749ce23f991c5185466fbf0428d452c7673ee0e46a86ebbc93e5a4653
+    notes: >
+      Bulk CSV of the latest UNDP-recalculated composite series (HDI through 2023).
+      Hosted HDI must stay on this series. Ranks are not back-comparable to older
+      printed HDRs. Join on iso3. MPI is a separate statistical table; ingest only
+      if an ISO3/M49 column exists — never join on English names. CC BY 3.0 IGO.
+  - id: unesco-uis
+    dataset: UIS Bulk Data Download Service (February 2026)
+    vintage: uis-2026-02
+    licenseId: cc-by-sa-3.0-igo
+    bulkIndexUrl: https://databrowser.uis.unesco.org/resources/bulk
+    url: https://download.uis.unesco.org/bdds/202602/OPRI.zip
+    filename: OPRI.zip
+    sha256: 7e35482e817d63b0cf638fb695f8a9fd2df9139ae830c0d13f2eba4706d50eca
+    files:
+      - id: sdg
+        url: https://download.uis.unesco.org/bdds/202602/SDG.zip
+        filename: SDG.zip
+        sha256: 8f68d5d01e2f3d8cdb20dd5149da126fc21d7915f86a003cf56e88a40e1bfce5
+    notes: >
+      Official BDDS CSV archives (OPRI + SDG 4). License CC BY-SA 3.0 IGO.
+      Snapshots live only under data/raw/unesco/ with their own LICENSE so
+      ShareAlike does not infect the site MIT license. Do not copy UIS prose.
+      Join on COUNTRY_ID / geoUnit ISO alpha-3. API allowlist is a fallback
+      when a zip is blocked.
+  - id: ilo-stat
+    dataset: ILOSTAT modelled estimates (annual)
+    vintage: ilo-2025-12
+    licenseId: cc-by-4.0
+    estimateLastYear: 2025
+    seriesUrlTemplate: https://rplumber.ilo.org/data/indicator?id={code}
+    notes: >
+      Bulk CSV from the ILOSTAT plumber bulk facility (same tables as the
+      indicator explorer). Prefer modelled estimates (2EAP / 2WAP) over WDI
+      labour copies. Join on ref_area ISO alpha-3. Filter SEX_T and age
+      AGE_YTHADULT_YGE15 (15–24 for youth unemployment). Years after
+      estimateLastYear are projections. CC BY 4.0.
+  - id: imf-weo
+    dataset: World Economic Outlook April 2026
+    vintage: weo-2026-04
+    licenseId: imf-data-terms
+    estimateLastYear: 2025
+    url: https://data.imf.org/-/media/iData/External-Storage/Documents/2F78EE59F79143A7921E5E203D3AAA80/en/WEOApr2026all.xlsx
+    filename: WEOApr2026all.xlsx
+    sha256: b29239cb48f8b895d1e526070c4fde01147bc8f6bd3b86f636363bb6bd87fe7a
+    seriesUrlTemplate: https://www.imf.org/external/datamapper/api/v1/{code}
+    bulkUrl: https://data.imf.org/en/datasets/IMF.RES:WEO
+    notes: >
+      April 2026 entire-dataset Excel is snapshotted and gitignored (checksums
+      kept). Do not resell or redistribute the raw file as a product. Figures
+      are parsed from the Countries sheet when the workbook is present, else
+      from DataMapper JSON of the same vintage. Years after Estimates Start
+      After (or estimateLastYear) are projections. Attribution required.
+  - id: owid-co2
+    dataset: OWID CO2 data (Global Carbon Project)
+    vintage: owid-co2-2025-12
+    licenseId: cc-by-4.0
+    url: https://owid-public.owid.io/data/co2/owid-co2-data.csv
+    filename: owid-co2-data.csv
+    sha256: 7ec10de1e9502c20c70bfff54476d7893922f7594aa299d9291d87fe49f3e342
+    notes: >
+      Our World in Data compilation of Global Carbon Project fossil CO2.
+      Not IEA-EDGAR (CC BY-NC-ND). Join on iso_code. Record Global Carbon
+      Project as the original source on every valued observation. OWID
+      compilation is CC BY 4.0; do not treat empty iso_code aggregates as
+      countries.

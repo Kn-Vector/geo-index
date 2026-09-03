@@ -1,0 +1,44 @@
+{
+  "name": "geo-index",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Geo Index — a static editorial world atlas",
+  "type": "module",
+  "packageManager": "pnpm@10.34.5",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "data:fetch": "tsx scripts/fetch/index.ts",
+    "data:normalize": "tsx scripts/normalize/index.ts",
+    "data:validate": "tsx scripts/validate/index.ts",
+    "geo:build": "tsx scripts/build-geo/index.ts",
+    "media:build": "tsx scripts/build-media/index.ts",
+    "build": "tsx scripts/build-media/og.ts && pnpm --filter @geo-index/web build",
+    "dev": "pnpm --filter @geo-index/web dev",
+    "check": "pnpm --filter @geo-index/schema typecheck && pnpm --filter @geo-index/web exec astro check",
+    "release:pack": "tsx scripts/release/pack.ts",
+    "test": "vitest run",
+    "test:schema": "vitest run packages/schema",
+    "test:geo": "vitest run packages/geo",
+    "crosswalk:build": "tsx scripts/normalize/entities.ts"
+  },
+  "dependencies": {
+    "@geo-index/schema": "workspace:*"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "@types/node": "^24.3.0",
+    "exceljs": "^4.4.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4",
+    "yaml": "^2.8.1"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "@resvg/resvg-js"
+    ]
+  }
+}

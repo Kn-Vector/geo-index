@@ -1,0 +1,69 @@
+# Domain-owner wins when sources overlap. The other series is stored as alternate.
+version: 1
+rules:
+  - indicatorId: population
+    sources: [un-wpp, world-bank-wdi]
+  - indicatorId: population-growth-rate
+    sources: [un-wpp, world-bank-wdi]
+  - indicatorId: population-density
+    sources: [un-wpp, world-bank-wdi]
+  - indicatorId: life-expectancy
+    sources: [un-wpp, world-bank-wdi]
+  - indicatorId: life-expectancy-male
+    sources: [un-wpp, world-bank-wdi]
+  - indicatorId: life-expectancy-female
+    sources: [un-wpp, world-bank-wdi]
+  - indicatorId: total-fertility-rate
+    sources: [un-wpp, world-bank-wdi]
+  - indicatorId: crude-birth-rate
+    sources: [un-wpp, world-bank-wdi]
+  - indicatorId: crude-death-rate
+    sources: [un-wpp, world-bank-wdi]
+  - indicatorId: infant-mortality
+    sources: [un-wpp, world-bank-wdi]
+  - indicatorId: under-five-mortality
+    sources: [un-wpp, world-bank-wdi]
+  - indicatorId: net-migration
+    sources: [un-wpp, world-bank-wdi]
+  - indicatorId: gdp
+    sources: [world-bank-wdi, imf-weo]
+  - indicatorId: gdp-per-capita
+    sources: [world-bank-wdi, imf-weo]
+  - indicatorId: gdp-growth
+    sources: [world-bank-wdi, imf-weo]
+  - indicatorId: inflation-cpi
+    sources: [world-bank-wdi, imf-weo]
+  - indicatorId: unemployment
+    sources: [ilo-stat, world-bank-wdi, imf-weo]
+  - indicatorId: hdi
+    sources: [undp-hdr]
+  - indicatorId: ihdi
+    sources: [undp-hdr]
+  - indicatorId: gdi
+    sources: [undp-hdr]
+  - indicatorId: gii
+    sources: [undp-hdr]
+  - indicatorId: mpi
+    sources: [undp-hdr]
+  - indicatorId: mean-years-schooling
+    sources: [unesco-uis, undp-hdr]
+  - indicatorId: expected-years-schooling
+    sources: [unesco-uis, undp-hdr]
+  - indicatorId: literacy-rate-adult
+    sources: [unesco-uis]
+  - indicatorId: literacy-rate-youth
+    sources: [unesco-uis]
+  - indicatorId: labor-force-participation
+    sources: [ilo-stat]
+  - indicatorId: employment-to-population
+    sources: [ilo-stat]
+  - indicatorId: youth-unemployment
+    sources: [ilo-stat]
+  - indicatorId: fiscal-balance-pct-gdp
+    sources: [imf-weo]
+  - indicatorId: government-debt-pct-gdp
+    sources: [imf-weo]
+  - indicatorId: co2-emissions
+    sources: [owid-co2]
+  - indicatorId: co2-per-capita
+    sources: [owid-co2]

@@ -1,0 +1,74 @@
+---
+import "@fontsource-variable/source-serif-4";
+import "@fontsource-variable/source-sans-3";
+import SearchIsland from "../islands/SearchIsland.tsx";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogType?: string;
+  ogImage?: string;
+}
+
+const { title, description, canonical, ogType = "website", ogImage = "/og/default.png" } = Astro.props;
+const site = Astro.site ? Astro.site.href.replace(/\/$/, "") : "";
+const path = canonical ?? Astro.url.pathname;
+const canonicalHref = site ? `${site}${path}` : path;
+const ogImageHref = ogImage.startsWith("http") ? ogImage : `${site}${ogImage}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="canonical" href={canonicalHref} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalHref} />
+    <meta property="og:image" content={ogImageHref} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageHref} />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='none' stroke='%231b1712' stroke-width='6'/></svg>" />
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="site-wordmark" href="/">Geo Index</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/countries/">Countries</a>
+        <a href="/regions/">Regions</a>
+        <a href="/indicators/">Indicators</a>
+        <a href="/compare/">Compare</a>
+        <a href="/sources/">Sources</a>
+      </nav>
+      <SearchIsland client:load />
+    </header>
+    <main id="main" class="site-main" data-pagefind-body>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <p>
+        Names, classifications, and boundaries are for statistical and cartographic use and do not
+        constitute recognition of legal claims.
+        <a href="/methodology/">Methodology</a>
+        ·
+        <a href="/methodology/maps/">Map policy</a>
+        ·
+        <a href="/sources/">Sources and coverage</a>
+      </p>
+    </footer>
+  </body>
+</html>

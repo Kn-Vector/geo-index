@@ -1,0 +1,2026 @@
+[
+  {
+    "entityId": "afghanistan",
+    "accent": "#bf0000",
+    "accentMuted": "#bf0000",
+    "source": "flag",
+    "contrastOnPaper": 5.7027360692867894,
+    "contrastOnInk": 2.7296765407509906
+  },
+  {
+    "entityId": "aland-islands",
+    "accent": "#0053a5",
+    "accentMuted": "#0053a5",
+    "source": "flag",
+    "contrastOnPaper": 6.594148281450942,
+    "contrastOnInk": 2.3606725542121816
+  },
+  {
+    "entityId": "albania",
+    "accent": "#3f5c4a",
+    "accentMuted": "#5e7a90",
+    "source": "default",
+    "contrastOnPaper": 6.453802334985876,
+    "contrastOnInk": 2.41200831051804
+  },
+  {
+    "entityId": "algeria",
+    "accent": "#006233",
+    "accentMuted": "#006233",
+    "source": "flag",
+    "contrastOnPaper": 6.560524501889818,
+    "contrastOnInk": 2.3727713938028216
+  },
+  {
+    "entityId": "american-samoa",
+    "accent": "#bd1021",
+    "accentMuted": "#bd1021",
+    "source": "flag",
+    "contrastOnPaper": 5.624769723969537,
+    "contrastOnInk": 2.76751327260397
+  },
+  {
+    "entityId": "andorra",
+    "accent": "#0065bd",
+    "accentMuted": "#0065bd",
+    "source": "flag",
+    "contrastOnPaper": 5.098537576800491,
+    "contrastOnInk": 3.053154876656859
+  },
+  {
+    "entityId": "angola",
+    "accent": "#766e00",
+    "accentMuted": "#877d00",
+    "source": "flag",
+    "contrastOnPaper": 4.596180932101882,
+    "contrastOnInk": 3.3868607647062063
+  },
+  {
+    "entityId": "anguilla",
+    "accent": "#c8102e",
+    "accentMuted": "#c8102e",
+    "source": "flag",
+    "contrastOnPaper": 5.136899701405815,
+    "contrastOnInk": 3.0303540600893077
+  },
+  {
+    "entityId": "antarctica",
+    "accent": "#336eb5",
+    "accentMuted": "#3a7dce",
+    "source": "flag",
+    "contrastOnPaper": 4.537587035223104,
+    "contrastOnInk": 3.430595324252835
+  },
+  {
+    "entityId": "antigua-and-barbuda",
+    "accent": "#ce1126",
+    "accentMuted": "#ce1126",
+    "source": "flag",
+    "contrastOnPaper": 4.912446663387753,
+    "contrastOnInk": 3.168813003598396
+  },
+  {
+    "entityId": "argentina",
+    "accent": "#466786",
+    "accentMuted": "#5a85ad",
+    "source": "flag",
+    "contrastOnPaper": 5.170970189465544,
+    "contrastOnInk": 3.0103876634484297
+  },
+  {
+    "entityId": "armenia",
+    "accent": "#d90012",
+    "accentMuted": "#d90012",
+    "source": "flag",
+    "contrastOnPaper": 4.631345435064927,
+    "contrastOnInk": 3.361145283737281
+  },
+  {
+    "entityId": "aruba",
+    "accent": "#cc0000",
+    "accentMuted": "#cc0000",
+    "source": "flag",
+    "contrastOnPaper": 5.139730553949059,
+    "contrastOnInk": 3.028685006544985
+  },
+  {
+    "entityId": "australia",
+    "accent": "#3f5c4a",
+    "accentMuted": "#5e7a90",
+    "source": "default",
+    "contrastOnPaper": 6.453802334985876,
+    "contrastOnInk": 2.41200831051804
+  },
+  {
+    "entityId": "austria",
+    "accent": "#c8102e",
+    "accentMuted": "#c8102e",
+    "source": "flag",
+    "contrastOnPaper": 5.136899701405815,
+    "contrastOnInk": 3.0303540600893077
+  },
+  {
+    "entityId": "azerbaijan",
+    "accent": "#d12432",
+    "accentMuted": "#ed2939",
+    "source": "flag",
+    "contrastOnPaper": 4.586373978014481,
+    "contrastOnInk": 3.394102823068458
+  },
+  {
+    "entityId": "bahamas",
+    "accent": "#046d71",
+    "accentMuted": "#058c92",
+    "source": "flag",
+    "contrastOnPaper": 5.36320505199371,
+    "contrastOnInk": 2.902485494310897
+  },
+  {
+    "entityId": "bahrain",
+    "accent": "#ce1126",
+    "accentMuted": "#ce1126",
+    "source": "flag",
+    "contrastOnPaper": 4.912446663387753,
+    "contrastOnInk": 3.168813003598396
+  },
+  {
+    "entityId": "bangladesh",
+    "accent": "#006a4e",
+    "accentMuted": "#006a4e",
+    "source": "flag",
+    "contrastOnPaper": 5.781216999637217,
+    "contrastOnInk": 2.6926207522401424
+  },
+  {
+    "entityId": "barbados",
+    "accent": "#876914",
+    "accentMuted": "#997717",
+    "source": "flag",
+    "contrastOnPaper": 4.522216450577046,
+    "contrastOnInk": 3.442255592263905
+  },
+  {
+    "entityId": "belarus",
+    "accent": "#ce1720",
+    "accentMuted": "#ce1720",
+    "source": "flag",
+    "contrastOnPaper": 4.866490506125022,
+    "contrastOnInk": 3.198737333779718
+  },
+  {
+    "entityId": "belgium",
+    "accent": "#d6152a",
+    "accentMuted": "#f31830",
+    "source": "flag",
+    "contrastOnPaper": 4.588156963788597,
+    "contrastOnInk": 3.3927838540146134
+  },
+  {
+    "entityId": "belize",
+    "accent": "#952d1a",
+    "accentMuted": "#952d1a",
+    "source": "flag",
+    "contrastOnPaper": 6.872037973342039,
+    "contrastOnInk": 2.2652122888163024
+  },
+  {
+    "entityId": "benin",
+    "accent": "#c31d0e",
+    "accentMuted": "#de2110",
+    "source": "flag",
+    "contrastOnPaper": 5.220102983152414,
+    "contrastOnInk": 2.9820532117215044
+  },
+  {
+    "entityId": "bermuda",
+    "accent": "#784421",
+    "accentMuted": "#784421",
+    "source": "flag",
+    "contrastOnPaper": 6.925923111632618,
+    "contrastOnInk": 2.2475884608481036
+  },
+  {
+    "entityId": "bhutan",
+    "accent": "#c53c0e",
+    "accentMuted": "#e04510",
+    "source": "flag",
+    "contrastOnPaper": 4.529652289363491,
+    "contrastOnInk": 3.4366048146742174
+  },
+  {
+    "entityId": "bolivia",
+    "accent": "#574f4c",
+    "accentMuted": "#574f4c",
+    "source": "flag",
+    "contrastOnPaper": 6.977111440063644,
+    "contrastOnInk": 2.23109878638898
+  },
+  {
+    "entityId": "bosnia-and-herzegovina",
+    "accent": "#765f00",
+    "accentMuted": "#997a00",
+    "source": "flag",
+    "contrastOnPaper": 5.387001381932313,
+    "contrastOnInk": 2.8896641680167767
+  },
+  {
+    "entityId": "botswana",
+    "accent": "#006b87",
+    "accentMuted": "#008aae",
+    "source": "flag",
+    "contrastOnPaper": 5.305618570124416,
+    "contrastOnInk": 2.9339886877811554
+  },
+  {
+    "entityId": "bouvet-island",
+    "accent": "#bd2323",
+    "accentMuted": "#d72828",
+    "source": "flag",
+    "contrastOnPaper": 5.336140616704939,
+    "contrastOnInk": 2.9172066451350447
+  },
+  {
+    "entityId": "brazil",
+    "accent": "#1f6b3a",
+    "accentMuted": "#3d7f44",
+    "source": "override",
+    "contrastOnPaper": 5.690058357119719,
+    "contrastOnInk": 2.735758385843061
+  },
+  {
+    "entityId": "british-indian-ocean-territory",
+    "accent": "#006300",
+    "accentMuted": "#006300",
+    "source": "flag",
+    "contrastOnPaper": 6.58441367671287,
+    "contrastOnInk": 2.364162646931074
+  },
+  {
+    "entityId": "british-virgin-islands",
+    "accent": "#006129",
+    "accentMuted": "#006129",
+    "source": "flag",
+    "contrastOnPaper": 6.687288363334298,
+    "contrastOnInk": 2.3277932729470496
+  },
+  {
+    "entityId": "brunei",
+    "accent": "#cf1126",
+    "accentMuted": "#cf1126",
+    "source": "flag",
+    "contrastOnPaper": 4.8749399249985705,
+    "contrastOnInk": 3.193193168720172
+  },
+  {
+    "entityId": "bulgaria",
+    "accent": "#bc2110",
+    "accentMuted": "#d62612",
+    "source": "flag",
+    "contrastOnPaper": 5.430822289070498,
+    "contrastOnInk": 2.8663476795686016
+  },
+  {
+    "entityId": "burkina-faso",
+    "accent": "#c30000",
+    "accentMuted": "#de0000",
+    "source": "flag",
+    "contrastOnPaper": 5.506223899698331,
+    "contrastOnInk": 2.8270962369110184
+  },
+  {
+    "entityId": "burundi",
+    "accent": "#cf0921",
+    "accentMuted": "#cf0921",
+    "source": "flag",
+    "contrastOnPaper": 4.936802361848351,
+    "contrastOnInk": 3.1531796749097483
+  },
+  {
+    "entityId": "cabo-verde",
+    "accent": "#c33224",
+    "accentMuted": "#de3929",
+    "source": "flag",
+    "contrastOnPaper": 4.806784139880911,
+    "contrastOnInk": 3.2384697155991553
+  },
+  {
+    "entityId": "cambodia",
+    "accent": "#c50021",
+    "accentMuted": "#e00025",
+    "source": "flag",
+    "contrastOnPaper": 5.394840742373578,
+    "contrastOnInk": 2.885465134152929
+  },
+  {
+    "entityId": "cameroon",
+    "accent": "#ce1126",
+    "accentMuted": "#ce1126",
+    "source": "flag",
+    "contrastOnPaper": 4.912446663387753,
+    "contrastOnInk": 3.168813003598396
+  },
+  {
+    "entityId": "canada",
+    "accent": "#bb261a",
+    "accentMuted": "#d52b1e",
+    "source": "flag",
+    "contrastOnPaper": 5.369909571311684,
+    "contrastOnInk": 2.898861639978096
+  },
+  {
+    "entityId": "caribbean-netherlands",
+    "accent": "#ae1c28",
+    "accentMuted": "#ae1c28",
+    "source": "flag",
+    "contrastOnPaper": 6.1191395142159815,
+    "contrastOnInk": 2.5439238360658867
+  },
+  {
+    "entityId": "cayman-islands",
+    "accent": "#0b50a0",
+    "accentMuted": "#0b50a0",
+    "source": "flag",
+    "contrastOnPaper": 6.8691444358995275,
+    "contrastOnInk": 2.2661664799290517
+  },
+  {
+    "entityId": "central-african-republic",
+    "accent": "#007700",
+    "accentMuted": "#009a00",
+    "source": "flag",
+    "contrastOnPaper": 5.02213125655832,
+    "contrastOnInk": 3.099605341078742
+  },
+  {
+    "entityId": "chad",
+    "accent": "#c60c30",
+    "accentMuted": "#c60c30",
+    "source": "flag",
+    "contrastOnPaper": 5.244176339055478,
+    "contrastOnInk": 2.9683641166861197
+  },
+  {
+    "entityId": "chile",
+    "accent": "#bb261a",
+    "accentMuted": "#d52b1e",
+    "source": "flag",
+    "contrastOnPaper": 5.369909571311684,
+    "contrastOnInk": 2.898861639978096
+  },
+  {
+    "entityId": "china",
+    "accent": "#a11b1b",
+    "accentMuted": "#bf2f25",
+    "source": "override",
+    "contrastOnPaper": 6.8213414528031455,
+    "contrastOnInk": 2.2820474497768695
+  },
+  {
+    "entityId": "christmas-island",
+    "accent": "#19793a",
+    "accentMuted": "#1c8a42",
+    "source": "flag",
+    "contrastOnPaper": 4.752593736802797,
+    "contrastOnInk": 3.275395653090005
+  },
+  {
+    "entityId": "cocos-islands",
+    "accent": "#766800",
+    "accentMuted": "#998600",
+    "source": "flag",
+    "contrastOnPaper": 4.879877973040518,
+    "contrastOnInk": 3.1899619114302418
+  },
+  {
+    "entityId": "colombia",
+    "accent": "#da0010",
+    "accentMuted": "#da0010",
+    "source": "flag",
+    "contrastOnPaper": 4.59710284179439,
+    "contrastOnInk": 3.3861815587206947
+  },
+  {
+    "entityId": "comoros",
+    "accent": "#3b5aa3",
+    "accentMuted": "#3b5aa3",
+    "source": "flag",
+    "contrastOnPaper": 5.770899289615684,
+    "contrastOnInk": 2.697434851174353
+  },
+  {
+    "entityId": "cook-islands",
+    "accent": "#c8102e",
+    "accentMuted": "#c8102e",
+    "source": "flag",
+    "contrastOnPaper": 5.136899701405815,
+    "contrastOnInk": 3.0303540600893077
+  },
+  {
+    "entityId": "costa-rica",
+    "accent": "#d90000",
+    "accentMuted": "#d90000",
+    "source": "flag",
+    "contrastOnPaper": 4.641585699876146,
+    "contrastOnInk": 3.353729926141843
+  },
+  {
+    "entityId": "cote-divoire",
+    "accent": "#007b00",
+    "accentMuted": "#009f00",
+    "source": "flag",
+    "contrastOnPaper": 4.787322458706768,
+    "contrastOnInk": 3.251634917158219
+  },
+  {
+    "entityId": "croatia",
+    "accent": "#0072ab",
+    "accentMuted": "#0081c2",
+    "source": "flag",
+    "contrastOnPaper": 4.596938479627975,
+    "contrastOnInk": 3.3863026306339545
+  },
+  {
+    "entityId": "cuba",
+    "accent": "#cb1515",
+    "accentMuted": "#cb1515",
+    "source": "flag",
+    "contrastOnPaper": 5.013362104277647,
+    "contrastOnInk": 3.1050270342819353
+  },
+  {
+    "entityId": "curacao",
+    "accent": "#746c09",
+    "accentMuted": "#958b0c",
+    "source": "flag",
+    "contrastOnPaper": 4.730800234804221,
+    "contrastOnInk": 3.290484504482754
+  },
+  {
+    "entityId": "cyprus",
+    "accent": "#905000",
+    "accentMuted": "#bb6800",
+    "source": "flag",
+    "contrastOnPaper": 5.466867264095351,
+    "contrastOnInk": 2.847448843081177
+  },
+  {
+    "entityId": "czechia",
+    "accent": "#d7141a",
+    "accentMuted": "#d7141a",
+    "source": "flag",
+    "contrastOnPaper": 4.578934544749211,
+    "contrastOnInk": 3.3996172503224216
+  },
+  {
+    "entityId": "democratic-republic-of-the-congo",
+    "accent": "#ce1021",
+    "accentMuted": "#ce1021",
+    "source": "flag",
+    "contrastOnPaper": 4.928410414224032,
+    "contrastOnInk": 3.1585488135280624
+  },
+  {
+    "entityId": "denmark",
+    "accent": "#c8102e",
+    "accentMuted": "#c8102e",
+    "source": "flag",
+    "contrastOnPaper": 5.136899701405815,
+    "contrastOnInk": 3.0303540600893077
+  },
+  {
+    "entityId": "djibouti",
+    "accent": "#4668ae",
+    "accentMuted": "#5a87e0",
+    "source": "flag",
+    "contrastOnPaper": 4.7538440543304725,
+    "contrastOnInk": 3.2745341850762615
+  },
+  {
+    "entityId": "dominica",
+    "accent": "#c90000",
+    "accentMuted": "#c90000",
+    "source": "flag",
+    "contrastOnPaper": 5.26362760972811,
+    "contrastOnInk": 2.957394789414206
+  },
+  {
+    "entityId": "dominican-republic",
+    "accent": "#006300",
+    "accentMuted": "#006300",
+    "source": "flag",
+    "contrastOnPaper": 6.58441367671287,
+    "contrastOnInk": 2.364162646931074
+  },
+  {
+    "entityId": "ecuador",
+    "accent": "#984000",
+    "accentMuted": "#984000",
+    "source": "flag",
+    "contrastOnPaper": 5.975630688250687,
+    "contrastOnInk": 2.605017893263356
+  },
+  {
+    "entityId": "egypt",
+    "accent": "#ce1126",
+    "accentMuted": "#ce1126",
+    "source": "flag",
+    "contrastOnPaper": 4.912446663387753,
+    "contrastOnInk": 3.168813003598396
+  },
+  {
+    "entityId": "el-salvador",
+    "accent": "#0a52a2",
+    "accentMuted": "#0a52a2",
+    "source": "flag",
+    "contrastOnPaper": 6.688133500852733,
+    "contrastOnInk": 2.3274991242985696
+  },
+  {
+    "entityId": "equatorial-guinea",
+    "accent": "#73452b",
+    "accentMuted": "#73452b",
+    "source": "flag",
+    "contrastOnPaper": 7.011531029634024,
+    "contrastOnInk": 2.2201463276187177
+  },
+  {
+    "entityId": "eritrea",
+    "accent": "#be0027",
+    "accentMuted": "#be0027",
+    "source": "flag",
+    "contrastOnPaper": 5.696617516583974,
+    "contrastOnInk": 2.7326083980729194
+  },
+  {
+    "entityId": "estonia",
+    "accent": "#1063ae",
+    "accentMuted": "#1480e0",
+    "source": "flag",
+    "contrastOnPaper": 5.37931817253018,
+    "contrastOnInk": 2.893791437345832
+  },
+  {
+    "entityId": "eswatini",
+    "accent": "#a70000",
+    "accentMuted": "#a70000",
+    "source": "flag",
+    "contrastOnPaper": 6.937258720780946,
+    "contrastOnInk": 2.2439158597034834
+  },
+  {
+    "entityId": "ethiopia",
+    "accent": "#006bc6",
+    "accentMuted": "#006bc6",
+    "source": "flag",
+    "contrastOnPaper": 4.67927881176719,
+    "contrastOnInk": 3.326714541411933
+  },
+  {
+    "entityId": "falkland-islands",
+    "accent": "#a43907",
+    "accentMuted": "#a43907",
+    "source": "flag",
+    "contrastOnPaper": 5.789986421051991,
+    "contrastOnInk": 2.6885425516418295
+  },
+  {
+    "entityId": "faroe-islands",
+    "accent": "#bd2323",
+    "accentMuted": "#d72828",
+    "source": "flag",
+    "contrastOnPaper": 5.336140616704939,
+    "contrastOnInk": 2.9172066451350447
+  },
+  {
+    "entityId": "fiji",
+    "accent": "#964b36",
+    "accentMuted": "#964b36",
+    "source": "flag",
+    "contrastOnPaper": 5.462781386819256,
+    "contrastOnInk": 2.8495785871984975
+  },
+  {
+    "entityId": "finland",
+    "accent": "#3f5c4a",
+    "accentMuted": "#5e7a90",
+    "source": "default",
+    "contrastOnPaper": 6.453802334985876,
+    "contrastOnInk": 2.41200831051804
+  },
+  {
+    "entityId": "france",
+    "accent": "#2f4c7a",
+    "accentMuted": "#4d6084",
+    "source": "override",
+    "contrastOnPaper": 7.528046744295342,
+    "contrastOnInk": 2.0678172433271427
+  },
+  {
+    "entityId": "french-guiana",
+    "accent": "#c6000d",
+    "accentMuted": "#e1000f",
+    "source": "flag",
+    "contrastOnPaper": 5.3817094828835135,
+    "contrastOnInk": 2.8925056092188175
+  },
+  {
+    "entityId": "french-polynesia",
+    "accent": "#c31c0e",
+    "accentMuted": "#de2010",
+    "source": "flag",
+    "contrastOnPaper": 5.232788104235906,
+    "contrastOnInk": 2.974824234488988
+  },
+  {
+    "entityId": "french-southern-territories",
+    "accent": "#d12432",
+    "accentMuted": "#ed2939",
+    "source": "flag",
+    "contrastOnPaper": 4.586373978014481,
+    "contrastOnInk": 3.394102823068458
+  },
+  {
+    "entityId": "gabon",
+    "accent": "#006dbc",
+    "accentMuted": "#006dbc",
+    "source": "flag",
+    "contrastOnPaper": 4.6851347027193375,
+    "contrastOnInk": 3.322556522738078
+  },
+  {
+    "entityId": "gambia",
+    "accent": "#007600",
+    "accentMuted": "#009900",
+    "source": "flag",
+    "contrastOnPaper": 5.073290327506086,
+    "contrastOnInk": 3.068348913924439
+  },
+  {
+    "entityId": "georgia",
+    "accent": "#3f5c4a",
+    "accentMuted": "#5e7a90",
+    "source": "default",
+    "contrastOnPaper": 6.453802334985876,
+    "contrastOnInk": 2.41200831051804
+  },
+  {
+    "entityId": "germany",
+    "accent": "#765f00",
+    "accentMuted": "#997a00",
+    "source": "flag",
+    "contrastOnPaper": 5.387001381932313,
+    "contrastOnInk": 2.8896641680167767
+  },
+  {
+    "entityId": "ghana",
+    "accent": "#006b3f",
+    "accentMuted": "#006b3f",
+    "source": "flag",
+    "contrastOnPaper": 5.775337253525799,
+    "contrastOnInk": 2.6953620512678045
+  },
+  {
+    "entityId": "gibraltar",
+    "accent": "#da000c",
+    "accentMuted": "#da000c",
+    "source": "flag",
+    "contrastOnPaper": 4.599609010976247,
+    "contrastOnInk": 3.3843365445365796
+  },
+  {
+    "entityId": "greece",
+    "accent": "#0d5eaf",
+    "accentMuted": "#0d5eaf",
+    "source": "flag",
+    "contrastOnPaper": 5.664067875311205,
+    "contrastOnInk": 2.748311850971838
+  },
+  {
+    "entityId": "greenland",
+    "accent": "#d00c33",
+    "accentMuted": "#d00c33",
+    "source": "flag",
+    "contrastOnPaper": 4.847713892271075,
+    "contrastOnInk": 3.2111269790994106
+  },
+  {
+    "entityId": "grenada",
+    "accent": "#ce1126",
+    "accentMuted": "#ce1126",
+    "source": "flag",
+    "contrastOnPaper": 4.912446663387753,
+    "contrastOnInk": 3.168813003598396
+  },
+  {
+    "entityId": "guadeloupe",
+    "accent": "#c6000d",
+    "accentMuted": "#e1000f",
+    "source": "flag",
+    "contrastOnPaper": 5.3817094828835135,
+    "contrastOnInk": 2.8925056092188175
+  },
+  {
+    "entityId": "guam",
+    "accent": "#3b5aa3",
+    "accentMuted": "#3b5aa3",
+    "source": "flag",
+    "contrastOnPaper": 5.770899289615684,
+    "contrastOnInk": 2.697434851174353
+  },
+  {
+    "entityId": "guatemala",
+    "accent": "#a50a0a",
+    "accentMuted": "#a50a0a",
+    "source": "flag",
+    "contrastOnPaper": 6.9252898532307645,
+    "contrastOnInk": 2.247793983549233
+  },
+  {
+    "entityId": "guernsey",
+    "accent": "#cc0f28",
+    "accentMuted": "#e8112d",
+    "source": "flag",
+    "contrastOnPaper": 4.995872602081497,
+    "contrastOnInk": 3.1158970827120243
+  },
+  {
+    "entityId": "guinea",
+    "accent": "#007600",
+    "accentMuted": "#009900",
+    "source": "flag",
+    "contrastOnPaper": 5.073290327506086,
+    "contrastOnInk": 3.068348913924439
+  },
+  {
+    "entityId": "guinea-bissau",
+    "accent": "#ce1126",
+    "accentMuted": "#ce1126",
+    "source": "flag",
+    "contrastOnPaper": 4.912446663387753,
+    "contrastOnInk": 3.168813003598396
+  },
+  {
+    "entityId": "guyana",
+    "accent": "#c31d0e",
+    "accentMuted": "#de2110",
+    "source": "flag",
+    "contrastOnPaper": 5.220102983152414,
+    "contrastOnInk": 2.9820532117215044
+  },
+  {
+    "entityId": "haiti",
+    "accent": "#016a16",
+    "accentMuted": "#016a16",
+    "source": "flag",
+    "contrastOnPaper": 5.963869098177812,
+    "contrastOnInk": 2.610155355553135
+  },
+  {
+    "entityId": "heard-island",
+    "accent": "#3f5c4a",
+    "accentMuted": "#5e7a90",
+    "source": "default",
+    "contrastOnPaper": 6.453802334985876,
+    "contrastOnInk": 2.41200831051804
+  },
+  {
+    "entityId": "holy-see",
+    "accent": "#6f5610",
+    "accentMuted": "#8d6a1a",
+    "source": "override",
+    "contrastOnPaper": 6.082554484069009,
+    "contrastOnInk": 2.5592248959212207
+  },
+  {
+    "entityId": "honduras",
+    "accent": "#0e7586",
+    "accentMuted": "#1397ad",
+    "source": "flag",
+    "contrastOnPaper": 4.69691609839006,
+    "contrastOnInk": 3.3142224686028268
+  },
+  {
+    "entityId": "hong-kong",
+    "accent": "#d01828",
+    "accentMuted": "#ec1b2e",
+    "source": "flag",
+    "contrastOnPaper": 4.784066235018516,
+    "contrastOnInk": 3.253848107804556
+  },
+  {
+    "entityId": "hungary",
+    "accent": "#bb2f13",
+    "accentMuted": "#d43516",
+    "source": "flag",
+    "contrastOnPaper": 5.22031925787593,
+    "contrastOnInk": 2.9819296670296924
+  },
+  {
+    "entityId": "iceland",
+    "accent": "#1d4e89",
+    "accentMuted": "#3b6293",
+    "source": "override",
+    "contrastOnPaper": 7.324888495670787,
+    "contrastOnInk": 2.125168850778681
+  },
+  {
+    "entityId": "india",
+    "accent": "#9a4a12",
+    "accentMuted": "#b85e1c",
+    "source": "override",
+    "contrastOnPaper": 5.453445721591381,
+    "contrastOnInk": 2.854456734536662
+  },
+  {
+    "entityId": "indonesia",
+    "accent": "#9b1b30",
+    "accentMuted": "#b92f3a",
+    "source": "override",
+    "contrastOnPaper": 7.0708378307585384,
+    "contrastOnInk": 2.2015248035686774
+  },
+  {
+    "entityId": "iran",
+    "accent": "#d90000",
+    "accentMuted": "#d90000",
+    "source": "flag",
+    "contrastOnPaper": 4.641585699876146,
+    "contrastOnInk": 3.353729926141843
+  },
+  {
+    "entityId": "iraq",
+    "accent": "#ce1126",
+    "accentMuted": "#ce1126",
+    "source": "flag",
+    "contrastOnPaper": 4.912446663387753,
+    "contrastOnInk": 3.168813003598396
+  },
+  {
+    "entityId": "ireland",
+    "accent": "#007739",
+    "accentMuted": "#009a49",
+    "source": "flag",
+    "contrastOnPaper": 4.9433973634553885,
+    "contrastOnInk": 3.1489730082199454
+  },
+  {
+    "entityId": "isle-of-man",
+    "accent": "#ba0000",
+    "accentMuted": "#ba0000",
+    "source": "flag",
+    "contrastOnPaper": 5.9381215354916534,
+    "contrastOnInk": 2.6214729310247784
+  },
+  {
+    "entityId": "israel",
+    "accent": "#3f5c4a",
+    "accentMuted": "#5e7a90",
+    "source": "default",
+    "contrastOnPaper": 6.453802334985876,
+    "contrastOnInk": 2.41200831051804
+  },
+  {
+    "entityId": "italy",
+    "accent": "#ce2b37",
+    "accentMuted": "#ce2b37",
+    "source": "flag",
+    "contrastOnPaper": 4.5554009988953235,
+    "contrastOnInk": 3.417179929977963
+  },
+  {
+    "entityId": "jamaica",
+    "accent": "#007600",
+    "accentMuted": "#009900",
+    "source": "flag",
+    "contrastOnPaper": 5.073290327506086,
+    "contrastOnInk": 3.068348913924439
+  },
+  {
+    "entityId": "japan",
+    "accent": "#9b1b30",
+    "accentMuted": "#b92f3a",
+    "source": "override",
+    "contrastOnPaper": 7.0708378307585384,
+    "contrastOnInk": 2.2015248035686774
+  },
+  {
+    "entityId": "jersey",
+    "accent": "#2c5aa0",
+    "accentMuted": "#2c5aa0",
+    "source": "flag",
+    "contrastOnPaper": 5.958667981834097,
+    "contrastOnInk": 2.612433670391417
+  },
+  {
+    "entityId": "jordan",
+    "accent": "#007600",
+    "accentMuted": "#009900",
+    "source": "flag",
+    "contrastOnPaper": 5.073290327506086,
+    "contrastOnInk": 3.068348913924439
+  },
+  {
+    "entityId": "kazakhstan",
+    "accent": "#007584",
+    "accentMuted": "#0096ab",
+    "source": "flag",
+    "contrastOnPaper": 4.75384227320401,
+    "contrastOnInk": 3.274535411949
+  },
+  {
+    "entityId": "kenya",
+    "accent": "#006600",
+    "accentMuted": "#006600",
+    "source": "flag",
+    "contrastOnPaper": 6.32151281067196,
+    "contrastOnInk": 2.4624841130033195
+  },
+  {
+    "entityId": "kiribati",
+    "accent": "#005989",
+    "accentMuted": "#005989",
+    "source": "flag",
+    "contrastOnPaper": 6.571566889815017,
+    "contrastOnInk": 2.368784359564641
+  },
+  {
+    "entityId": "kosovo",
+    "accent": "#7d6430",
+    "accentMuted": "#a1813e",
+    "source": "flag",
+    "contrastOnPaper": 4.9338946883120025,
+    "contrastOnInk": 3.155037926387594
+  },
+  {
+    "entityId": "kuwait",
+    "accent": "#d6152a",
+    "accentMuted": "#f31830",
+    "source": "flag",
+    "contrastOnPaper": 4.588156963788597,
+    "contrastOnInk": 3.3927838540146134
+  },
+  {
+    "entityId": "kyrgyzstan",
+    "accent": "#686800",
+    "accentMuted": "#878700",
+    "source": "flag",
+    "contrastOnPaper": 5.121977098870082,
+    "contrastOnInk": 3.039182832320881
+  },
+  {
+    "entityId": "laos",
+    "accent": "#ce1126",
+    "accentMuted": "#ce1126",
+    "source": "flag",
+    "contrastOnPaper": 4.912446663387753,
+    "contrastOnInk": 3.168813003598396
+  },
+  {
+    "entityId": "latvia",
+    "accent": "#3f5c4a",
+    "accentMuted": "#5e7a90",
+    "source": "default",
+    "contrastOnPaper": 6.453802334985876,
+    "contrastOnInk": 2.41200831051804
+  },
+  {
+    "entityId": "lebanon",
+    "accent": "#d1131b",
+    "accentMuted": "#ee161f",
+    "source": "flag",
+    "contrastOnPaper": 4.780430150738492,
+    "contrastOnInk": 3.2563230453271856
+  },
+  {
+    "entityId": "lesotho",
+    "accent": "#007334",
+    "accentMuted": "#009543",
+    "source": "flag",
+    "contrastOnPaper": 5.210087341116205,
+    "contrastOnInk": 2.987785779247931
+  },
+  {
+    "entityId": "liberia",
+    "accent": "#cc0000",
+    "accentMuted": "#cc0000",
+    "source": "flag",
+    "contrastOnPaper": 5.139730553949059,
+    "contrastOnInk": 3.028685006544985
+  },
+  {
+    "entityId": "libya",
+    "accent": "#1f6b3a",
+    "accentMuted": "#3d7f44",
+    "source": "override",
+    "contrastOnPaper": 5.690058357119719,
+    "contrastOnInk": 2.735758385843061
+  },
+  {
+    "entityId": "liechtenstein",
+    "accent": "#ce1126",
+    "accentMuted": "#ce1126",
+    "source": "flag",
+    "contrastOnPaper": 4.912446663387753,
+    "contrastOnInk": 3.168813003598396
+  },
+  {
+    "entityId": "lithuania",
+    "accent": "#006a44",
+    "accentMuted": "#006a44",
+    "source": "flag",
+    "contrastOnPaper": 5.830003366370728,
+    "contrastOnInk": 2.670088486778549
+  },
+  {
+    "entityId": "luxembourg",
+    "accent": "#d12432",
+    "accentMuted": "#ed2939",
+    "source": "flag",
+    "contrastOnPaper": 4.586373978014481,
+    "contrastOnInk": 3.394102823068458
+  },
+  {
+    "entityId": "macau",
+    "accent": "#00785e",
+    "accentMuted": "#00785e",
+    "source": "flag",
+    "contrastOnPaper": 4.764764037212606,
+    "contrastOnInk": 3.267029541201197
+  },
+  {
+    "entityId": "madagascar",
+    "accent": "#007e3a",
+    "accentMuted": "#007e3a",
+    "source": "flag",
+    "contrastOnPaper": 4.5324752645369575,
+    "contrastOnInk": 3.4344643837823496
+  },
+  {
+    "entityId": "malawi",
+    "accent": "#1d7734",
+    "accentMuted": "#21873b",
+    "source": "flag",
+    "contrastOnPaper": 4.914434364524807,
+    "contrastOnInk": 3.167531339678774
+  },
+  {
+    "entityId": "malaysia",
+    "accent": "#cc0000",
+    "accentMuted": "#cc0000",
+    "source": "flag",
+    "contrastOnPaper": 5.139730553949059,
+    "contrastOnInk": 3.028685006544985
+  },
+  {
+    "entityId": "maldives",
+    "accent": "#d21034",
+    "accentMuted": "#d21034",
+    "source": "flag",
+    "contrastOnPaper": 4.745266206899472,
+    "contrastOnInk": 3.2804534430109036
+  },
+  {
+    "entityId": "mali",
+    "accent": "#007700",
+    "accentMuted": "#009a00",
+    "source": "flag",
+    "contrastOnPaper": 5.02213125655832,
+    "contrastOnInk": 3.099605341078742
+  },
+  {
+    "entityId": "malta",
+    "accent": "#cf142b",
+    "accentMuted": "#cf142b",
+    "source": "flag",
+    "contrastOnPaper": 4.840477990268518,
+    "contrastOnInk": 3.2159272075448753
+  },
+  {
+    "entityId": "marshall-islands",
+    "accent": "#3b5aa3",
+    "accentMuted": "#3b5aa3",
+    "source": "flag",
+    "contrastOnPaper": 5.770899289615684,
+    "contrastOnInk": 2.697434851174353
+  },
+  {
+    "entityId": "martinique",
+    "accent": "#d2161f",
+    "accentMuted": "#ef1923",
+    "source": "flag",
+    "contrastOnPaper": 4.720782906282514,
+    "contrastOnInk": 3.2974667921522687
+  },
+  {
+    "entityId": "mauritania",
+    "accent": "#006233",
+    "accentMuted": "#006233",
+    "source": "flag",
+    "contrastOnPaper": 6.560524501889818,
+    "contrastOnInk": 2.3727713938028216
+  },
+  {
+    "entityId": "mauritius",
+    "accent": "#d12230",
+    "accentMuted": "#ee2737",
+    "source": "flag",
+    "contrastOnPaper": 4.584253526864129,
+    "contrastOnInk": 3.3956727687953716
+  },
+  {
+    "entityId": "mayotte",
+    "accent": "#c6000d",
+    "accentMuted": "#e1000f",
+    "source": "flag",
+    "contrastOnPaper": 5.3817094828835135,
+    "contrastOnInk": 2.8925056092188175
+  },
+  {
+    "entityId": "mexico",
+    "accent": "#803f1d",
+    "accentMuted": "#803f1d",
+    "source": "flag",
+    "contrastOnPaper": 6.9281229987510935,
+    "contrastOnInk": 2.246874784011889
+  },
+  {
+    "entityId": "micronesia",
+    "accent": "#466792",
+    "accentMuted": "#5b85bc",
+    "source": "flag",
+    "contrastOnPaper": 5.076235288517899,
+    "contrastOnInk": 3.0665688215117446
+  },
+  {
+    "entityId": "moldova",
+    "accent": "#564dff",
+    "accentMuted": "#564dff",
+    "source": "flag",
+    "contrastOnPaper": 4.700009647597547,
+    "contrastOnInk": 3.312041045359064
+  },
+  {
+    "entityId": "monaco",
+    "accent": "#d6152a",
+    "accentMuted": "#f31830",
+    "source": "flag",
+    "contrastOnPaper": 4.588156963788597,
+    "contrastOnInk": 3.3927838540146134
+  },
+  {
+    "entityId": "mongolia",
+    "accent": "#0066b3",
+    "accentMuted": "#0066b3",
+    "source": "flag",
+    "contrastOnPaper": 5.162872407910272,
+    "contrastOnInk": 3.0151093493180907
+  },
+  {
+    "entityId": "montenegro",
+    "accent": "#1d5e91",
+    "accentMuted": "#1d5e91",
+    "source": "flag",
+    "contrastOnPaper": 5.987823113677955,
+    "contrastOnInk": 2.599713547126651
+  },
+  {
+    "entityId": "montserrat",
+    "accent": "#a53d08",
+    "accentMuted": "#a53d08",
+    "source": "flag",
+    "contrastOnPaper": 5.605802957436679,
+    "contrastOnInk": 2.776876922827964
+  },
+  {
+    "entityId": "morocco",
+    "accent": "#006233",
+    "accentMuted": "#006233",
+    "source": "flag",
+    "contrastOnPaper": 6.560524501889818,
+    "contrastOnInk": 2.3727713938028216
+  },
+  {
+    "entityId": "mozambique",
+    "accent": "#007700",
+    "accentMuted": "#009a00",
+    "source": "flag",
+    "contrastOnPaper": 5.02213125655832,
+    "contrastOnInk": 3.099605341078742
+  },
+  {
+    "entityId": "myanmar",
+    "accent": "#ce2332",
+    "accentMuted": "#ea2839",
+    "source": "flag",
+    "contrastOnPaper": 4.688061182945906,
+    "contrastOnInk": 3.3204824465718334
+  },
+  {
+    "entityId": "namibia",
+    "accent": "#3662a2",
+    "accentMuted": "#3662a2",
+    "source": "flag",
+    "contrastOnPaper": 5.352512159566278,
+    "contrastOnInk": 2.908283886586826
+  },
+  {
+    "entityId": "nauru",
+    "accent": "#875e07",
+    "accentMuted": "#ae7909",
+    "source": "flag",
+    "contrastOnPaper": 5.058292928859975,
+    "contrastOnInk": 3.077446301619196
+  },
+  {
+    "entityId": "nepal",
+    "accent": "#ce0000",
+    "accentMuted": "#ce0000",
+    "source": "flag",
+    "contrastOnPaper": 5.0590566796691085,
+    "contrastOnInk": 3.0769817086621
+  },
+  {
+    "entityId": "netherlands",
+    "accent": "#ae1c28",
+    "accentMuted": "#ae1c28",
+    "source": "flag",
+    "contrastOnPaper": 6.1191395142159815,
+    "contrastOnInk": 2.5439238360658867
+  },
+  {
+    "entityId": "new-caledonia",
+    "accent": "#007334",
+    "accentMuted": "#009543",
+    "source": "flag",
+    "contrastOnPaper": 5.210087341116205,
+    "contrastOnInk": 2.987785779247931
+  },
+  {
+    "entityId": "new-zealand",
+    "accent": "#c8102e",
+    "accentMuted": "#c8102e",
+    "source": "flag",
+    "contrastOnPaper": 5.136899701405815,
+    "contrastOnInk": 3.0303540600893077
+  },
+  {
+    "entityId": "nicaragua",
+    "accent": "#aa0000",
+    "accentMuted": "#aa0000",
+    "source": "flag",
+    "contrastOnPaper": 6.767972054681792,
+    "contrastOnInk": 2.300042721904908
+  },
+  {
+    "entityId": "niger",
+    "accent": "#ad4005",
+    "accentMuted": "#e05206",
+    "source": "flag",
+    "contrastOnPaper": 5.221410923344737,
+    "contrastOnInk": 2.9813062206670717
+  },
+  {
+    "entityId": "nigeria",
+    "accent": "#1f6b3a",
+    "accentMuted": "#3d7f44",
+    "source": "override",
+    "contrastOnPaper": 5.690058357119719,
+    "contrastOnInk": 2.735758385843061
+  },
+  {
+    "entityId": "niue",
+    "accent": "#c8102e",
+    "accentMuted": "#c8102e",
+    "source": "flag",
+    "contrastOnPaper": 5.136899701405815,
+    "contrastOnInk": 3.0303540600893077
+  },
+  {
+    "entityId": "norfolk-island",
+    "accent": "#167200",
+    "accentMuted": "#198200",
+    "source": "flag",
+    "contrastOnPaper": 5.300715729599406,
+    "contrastOnInk": 2.936702449350758
+  },
+  {
+    "entityId": "north-korea",
+    "accent": "#3e5698",
+    "accentMuted": "#3e5698",
+    "source": "flag",
+    "contrastOnPaper": 6.133743191834418,
+    "contrastOnInk": 2.537867070657576
+  },
+  {
+    "entityId": "north-macedonia",
+    "accent": "#d20000",
+    "accentMuted": "#d20000",
+    "source": "flag",
+    "contrastOnPaper": 4.9022054331982075,
+    "contrastOnInk": 3.175432992058632
+  },
+  {
+    "entityId": "northern-cyprus",
+    "accent": "#3f5c4a",
+    "accentMuted": "#5e7a90",
+    "source": "default",
+    "contrastOnPaper": 6.453802334985876,
+    "contrastOnInk": 2.41200831051804
+  },
+  {
+    "entityId": "northern-mariana-islands",
+    "accent": "#217900",
+    "accentMuted": "#217900",
+    "source": "flag",
+    "contrastOnPaper": 4.825713141154508,
+    "contrastOnInk": 3.225766723196168
+  },
+  {
+    "entityId": "norway",
+    "accent": "#d12432",
+    "accentMuted": "#ed2939",
+    "source": "flag",
+    "contrastOnPaper": 4.586373978014481,
+    "contrastOnInk": 3.394102823068458
+  },
+  {
+    "entityId": "oman",
+    "accent": "#d20000",
+    "accentMuted": "#ef0000",
+    "source": "flag",
+    "contrastOnPaper": 4.889911448069423,
+    "contrastOnInk": 3.183416516176892
+  },
+  {
+    "entityId": "pakistan",
+    "accent": "#3f5c4a",
+    "accentMuted": "#5e7a90",
+    "source": "default",
+    "contrastOnPaper": 6.453802334985876,
+    "contrastOnInk": 2.41200831051804
+  },
+  {
+    "entityId": "palau",
+    "accent": "#2c6880",
+    "accentMuted": "#3986a6",
+    "source": "flag",
+    "contrastOnPaper": 5.405284284306501,
+    "contrastOnInk": 2.8798901311485534
+  },
+  {
+    "entityId": "palestine",
+    "accent": "#2f6b3a",
+    "accentMuted": "#4d7f44",
+    "source": "override",
+    "contrastOnPaper": 5.581617382176506,
+    "contrastOnInk": 2.788909343040025
+  },
+  {
+    "entityId": "panama",
+    "accent": "#d80000",
+    "accentMuted": "#d80000",
+    "source": "flag",
+    "contrastOnPaper": 4.677769286798118,
+    "contrastOnInk": 3.3277880784671723
+  },
+  {
+    "entityId": "papua-new-guinea",
+    "accent": "#765f00",
+    "accentMuted": "#997a00",
+    "source": "flag",
+    "contrastOnPaper": 5.387001381932313,
+    "contrastOnInk": 2.8896641680167767
+  },
+  {
+    "entityId": "paraguay",
+    "accent": "#bb261a",
+    "accentMuted": "#d52b1e",
+    "source": "flag",
+    "contrastOnPaper": 5.369909571311684,
+    "contrastOnInk": 2.898861639978096
+  },
+  {
+    "entityId": "peru",
+    "accent": "#d91023",
+    "accentMuted": "#d91023",
+    "source": "flag",
+    "contrastOnPaper": 4.528792701476858,
+    "contrastOnInk": 3.4372570997454406
+  },
+  {
+    "entityId": "philippines",
+    "accent": "#ce1126",
+    "accentMuted": "#ce1126",
+    "source": "flag",
+    "contrastOnPaper": 4.912446663387753,
+    "contrastOnInk": 3.168813003598396
+  },
+  {
+    "entityId": "pitcairn",
+    "accent": "#316d3a",
+    "accentMuted": "#316d3a",
+    "source": "flag",
+    "contrastOnPaper": 5.42617849013451,
+    "contrastOnInk": 2.868800739734011
+  },
+  {
+    "entityId": "poland",
+    "accent": "#c21235",
+    "accentMuted": "#dc143c",
+    "source": "flag",
+    "contrastOnPaper": 5.364046651597376,
+    "contrastOnInk": 2.90203010478871
+  },
+  {
+    "entityId": "portugal",
+    "accent": "#006600",
+    "accentMuted": "#006600",
+    "source": "flag",
+    "contrastOnPaper": 6.32151281067196,
+    "contrastOnInk": 2.4624841130033195
+  },
+  {
+    "entityId": "puerto-rico",
+    "accent": "#0050f0",
+    "accentMuted": "#0050f0",
+    "source": "flag",
+    "contrastOnPaper": 5.383843291217352,
+    "contrastOnInk": 2.8913592065022495
+  },
+  {
+    "entityId": "qatar",
+    "accent": "#3f5c4a",
+    "accentMuted": "#5e7a90",
+    "source": "default",
+    "contrastOnPaper": 6.453802334985876,
+    "contrastOnInk": 2.41200831051804
+  },
+  {
+    "entityId": "republic-of-the-congo",
+    "accent": "#007900",
+    "accentMuted": "#009c00",
+    "source": "flag",
+    "contrastOnPaper": 4.900427431767063,
+    "contrastOnInk": 3.1765851210275833
+  },
+  {
+    "entityId": "reunion",
+    "accent": "#c6000d",
+    "accentMuted": "#e1000f",
+    "source": "flag",
+    "contrastOnPaper": 5.3817094828835135,
+    "contrastOnInk": 2.8925056092188175
+  },
+  {
+    "entityId": "romania",
+    "accent": "#c31d0e",
+    "accentMuted": "#de2110",
+    "source": "flag",
+    "contrastOnPaper": 5.220102983152414,
+    "contrastOnInk": 2.9820532117215044
+  },
+  {
+    "entityId": "russia",
+    "accent": "#bb261a",
+    "accentMuted": "#d52b1e",
+    "source": "flag",
+    "contrastOnPaper": 5.369909571311684,
+    "contrastOnInk": 2.898861639978096
+  },
+  {
+    "entityId": "rwanda",
+    "accent": "#20603d",
+    "accentMuted": "#20603d",
+    "source": "flag",
+    "contrastOnPaper": 6.543966577427856,
+    "contrastOnInk": 2.378775117849886
+  },
+  {
+    "entityId": "saint-barthelemy",
+    "accent": "#c6000d",
+    "accentMuted": "#e1000f",
+    "source": "flag",
+    "contrastOnPaper": 5.3817094828835135,
+    "contrastOnInk": 2.8925056092188175
+  },
+  {
+    "entityId": "saint-helena",
+    "accent": "#c8102e",
+    "accentMuted": "#c8102e",
+    "source": "flag",
+    "contrastOnPaper": 5.136899701405815,
+    "contrastOnInk": 3.0303540600893077
+  },
+  {
+    "entityId": "saint-kitts-and-nevis",
+    "accent": "#c70000",
+    "accentMuted": "#c70000",
+    "source": "flag",
+    "contrastOnPaper": 5.348189393362063,
+    "contrastOnInk": 2.91063455713578
+  },
+  {
+    "entityId": "saint-lucia",
+    "accent": "#356d87",
+    "accentMuted": "#458dae",
+    "source": "flag",
+    "contrastOnPaper": 4.958059980954379,
+    "contrastOnInk": 3.1396604571593425
+  },
+  {
+    "entityId": "saint-martin",
+    "accent": "#c6000d",
+    "accentMuted": "#e1000f",
+    "source": "flag",
+    "contrastOnPaper": 5.3817094828835135,
+    "contrastOnInk": 2.8925056092188175
+  },
+  {
+    "entityId": "saint-pierre-and-miquelon",
+    "accent": "#c6000d",
+    "accentMuted": "#e1000f",
+    "source": "flag",
+    "contrastOnPaper": 5.3817094828835135,
+    "contrastOnInk": 2.8925056092188175
+  },
+  {
+    "entityId": "saint-vincent-and-the-grenadines",
+    "accent": "#0058aa",
+    "accentMuted": "#0058aa",
+    "source": "flag",
+    "contrastOnPaper": 6.160526519083624,
+    "contrastOnInk": 2.5268335130456014
+  },
+  {
+    "entityId": "samoa",
+    "accent": "#ce1126",
+    "accentMuted": "#ce1126",
+    "source": "flag",
+    "contrastOnPaper": 4.912446663387753,
+    "contrastOnInk": 3.168813003598396
+  },
+  {
+    "entityId": "san-marino",
+    "accent": "#ac0000",
+    "accentMuted": "#ac0000",
+    "source": "flag",
+    "contrastOnPaper": 6.657582024526431,
+    "contrastOnInk": 2.3381799591923094
+  },
+  {
+    "entityId": "sao-tome-and-principe",
+    "accent": "#d21034",
+    "accentMuted": "#d21034",
+    "source": "flag",
+    "contrastOnPaper": 4.745266206899472,
+    "contrastOnInk": 3.2804534430109036
+  },
+  {
+    "entityId": "saudi-arabia",
+    "accent": "#165d31",
+    "accentMuted": "#165d31",
+    "source": "flag",
+    "contrastOnPaper": 6.93435393539051,
+    "contrastOnInk": 2.24485583105011
+  },
+  {
+    "entityId": "senegal",
+    "accent": "#bc0000",
+    "accentMuted": "#bc0000",
+    "source": "flag",
+    "contrastOnPaper": 5.842657104024222,
+    "contrastOnInk": 2.664305741253394
+  },
+  {
+    "entityId": "serbia",
+    "accent": "#c6363c",
+    "accentMuted": "#c6363c",
+    "source": "flag",
+    "contrastOnPaper": 4.5907706601984986,
+    "contrastOnInk": 3.3908522160315417
+  },
+  {
+    "entityId": "seychelles",
+    "accent": "#007a39",
+    "accentMuted": "#007a39",
+    "source": "flag",
+    "contrastOnPaper": 4.771364912048173,
+    "contrastOnInk": 3.262509817079675
+  },
+  {
+    "entityId": "siachen-glacier",
+    "accent": "#3f5c4a",
+    "accentMuted": "#5e7a90",
+    "source": "default",
+    "contrastOnPaper": 6.453802334985876,
+    "contrastOnInk": 2.41200831051804
+  },
+  {
+    "entityId": "sierra-leone",
+    "accent": "#007b00",
+    "accentMuted": "#009f00",
+    "source": "flag",
+    "contrastOnPaper": 4.787322458706768,
+    "contrastOnInk": 3.251634917158219
+  },
+  {
+    "entityId": "singapore",
+    "accent": "#9b2030",
+    "accentMuted": "#b9343a",
+    "source": "override",
+    "contrastOnPaper": 6.937522961052215,
+    "contrastOnInk": 2.2438303921758367
+  },
+  {
+    "entityId": "sint-maarten",
+    "accent": "#007730",
+    "accentMuted": "#008737",
+    "source": "flag",
+    "contrastOnPaper": 4.992659528270105,
+    "contrastOnInk": 3.1179023480938843
+  },
+  {
+    "entityId": "slovakia",
+    "accent": "#0b4ea2",
+    "accentMuted": "#0b4ea2",
+    "source": "flag",
+    "contrastOnPaper": 6.983192835217746,
+    "contrastOnInk": 2.229155807916519
+  },
+  {
+    "entityId": "slovenia",
+    "accent": "#d50000",
+    "accentMuted": "#d50000",
+    "source": "flag",
+    "contrastOnPaper": 4.788396017046499,
+    "contrastOnInk": 3.250905900641906
+  },
+  {
+    "entityId": "solomon-islands",
+    "accent": "#006000",
+    "accentMuted": "#006000",
+    "source": "flag",
+    "contrastOnPaper": 6.8592727974714265,
+    "contrastOnInk": 2.269427871736648
+  },
+  {
+    "entityId": "somalia",
+    "accent": "#266499",
+    "accentMuted": "#3281c5",
+    "source": "flag",
+    "contrastOnPaper": 5.475080729397814,
+    "contrastOnInk": 2.8431772307654697
+  },
+  {
+    "entityId": "somaliland",
+    "accent": "#3f5c4a",
+    "accentMuted": "#5e7a90",
+    "source": "default",
+    "contrastOnPaper": 6.453802334985876,
+    "contrastOnInk": 2.41200831051804
+  },
+  {
+    "entityId": "south-africa",
+    "accent": "#3f6b2a",
+    "accentMuted": "#5d7f34",
+    "source": "override",
+    "contrastOnPaper": 5.476881802776089,
+    "contrastOnInk": 2.842242251519167
+  },
+  {
+    "entityId": "south-georgia",
+    "accent": "#6a4c2d",
+    "accentMuted": "#6a4c2d",
+    "source": "flag",
+    "contrastOnPaper": 6.830259977658978,
+    "contrastOnInk": 2.279067695423507
+  },
+  {
+    "entityId": "south-korea",
+    "accent": "#cd2e3a",
+    "accentMuted": "#cd2e3a",
+    "source": "flag",
+    "contrastOnPaper": 4.529918394409111,
+    "contrastOnInk": 3.4364029351255447
+  },
+  {
+    "entityId": "south-sudan",
+    "accent": "#c01017",
+    "accentMuted": "#da121a",
+    "source": "flag",
+    "contrastOnPaper": 5.518581178956459,
+    "contrastOnInk": 2.820765765988107
+  },
+  {
+    "entityId": "spain",
+    "accent": "#aa151b",
+    "accentMuted": "#aa151b",
+    "source": "flag",
+    "contrastOnPaper": 6.473834357108637,
+    "contrastOnInk": 2.404544819614303
+  },
+  {
+    "entityId": "sri-lanka",
+    "accent": "#ae3e00",
+    "accentMuted": "#e05000",
+    "source": "flag",
+    "contrastOnPaper": 5.262978218406633,
+    "contrastOnInk": 2.9577596981086236
+  },
+  {
+    "entityId": "sudan",
+    "accent": "#007700",
+    "accentMuted": "#009a00",
+    "source": "flag",
+    "contrastOnPaper": 5.02213125655832,
+    "contrastOnInk": 3.099605341078742
+  },
+  {
+    "entityId": "suriname",
+    "accent": "#b40a2d",
+    "accentMuted": "#b40a2d",
+    "source": "flag",
+    "contrastOnPaper": 6.067520013104039,
+    "contrastOnInk": 2.565566299378887
+  },
+  {
+    "entityId": "svalbard-and-jan-mayen",
+    "accent": "#d22628",
+    "accentMuted": "#ef2b2d",
+    "source": "flag",
+    "contrastOnPaper": 4.521751850234763,
+    "contrastOnInk": 3.4426092766719316
+  },
+  {
+    "entityId": "sweden",
+    "accent": "#005293",
+    "accentMuted": "#005293",
+    "source": "flag",
+    "contrastOnPaper": 6.976491928129756,
+    "contrastOnInk": 2.2312969077855342
+  },
+  {
+    "entityId": "switzerland",
+    "accent": "#3f5c4a",
+    "accentMuted": "#5e7a90",
+    "source": "default",
+    "contrastOnPaper": 6.453802334985876,
+    "contrastOnInk": 2.41200831051804
+  },
+  {
+    "entityId": "syria",
+    "accent": "#ce1126",
+    "accentMuted": "#ce1126",
+    "source": "flag",
+    "contrastOnPaper": 4.912446663387753,
+    "contrastOnInk": 3.168813003598396
+  },
+  {
+    "entityId": "taiwan",
+    "accent": "#3f5c4a",
+    "accentMuted": "#5e7a90",
+    "source": "default",
+    "contrastOnPaper": 6.453802334985876,
+    "contrastOnInk": 2.41200831051804
+  },
+  {
+    "entityId": "tajikistan",
+    "accent": "#006600",
+    "accentMuted": "#006600",
+    "source": "flag",
+    "contrastOnPaper": 6.32151281067196,
+    "contrastOnInk": 2.4624841130033195
+  },
+  {
+    "entityId": "tanzania",
+    "accent": "#007600",
+    "accentMuted": "#009900",
+    "source": "flag",
+    "contrastOnPaper": 5.073290327506086,
+    "contrastOnInk": 3.068348913924439
+  },
+  {
+    "entityId": "thailand",
+    "accent": "#a51931",
+    "accentMuted": "#a51931",
+    "source": "flag",
+    "contrastOnPaper": 6.587884238404358,
+    "contrastOnInk": 2.3629171829827165
+  },
+  {
+    "entityId": "timor-leste",
+    "accent": "#cb000f",
+    "accentMuted": "#cb000f",
+    "source": "flag",
+    "contrastOnPaper": 5.170564183818111,
+    "contrastOnInk": 3.01062404662614
+  },
+  {
+    "entityId": "togo",
+    "accent": "#d80000",
+    "accentMuted": "#d80000",
+    "source": "flag",
+    "contrastOnPaper": 4.677769286798118,
+    "contrastOnInk": 3.3277880784671723
+  },
+  {
+    "entityId": "tokelau",
+    "accent": "#766100",
+    "accentMuted": "#987d00",
+    "source": "flag",
+    "contrastOnPaper": 5.266132704579534,
+    "contrastOnInk": 2.9559879592266287
+  },
+  {
+    "entityId": "tonga",
+    "accent": "#c10000",
+    "accentMuted": "#c10000",
+    "source": "flag",
+    "contrastOnPaper": 5.611600095086324,
+    "contrastOnInk": 2.77400823341942
+  },
+  {
+    "entityId": "trinidad-and-tobago",
+    "accent": "#c50000",
+    "accentMuted": "#e00000",
+    "source": "flag",
+    "contrastOnPaper": 5.429138354513501,
+    "contrastOnInk": 2.867236723390073
+  },
+  {
+    "entityId": "tunisia",
+    "accent": "#cb0011",
+    "accentMuted": "#e70013",
+    "source": "flag",
+    "contrastOnPaper": 5.157631718622545,
+    "contrastOnInk": 3.018173013443477
+  },
+  {
+    "entityId": "turkiye",
+    "accent": "#c80914",
+    "accentMuted": "#e30a17",
+    "source": "flag",
+    "contrastOnPaper": 5.242189190733797,
+    "contrastOnInk": 2.969489329752263
+  },
+  {
+    "entityId": "turkmenistan",
+    "accent": "#d22630",
+    "accentMuted": "#d22630",
+    "source": "flag",
+    "contrastOnPaper": 4.5159388998750165,
+    "contrastOnInk": 3.4470406291053868
+  },
+  {
+    "entityId": "turks-and-caicos-islands",
+    "accent": "#c8102e",
+    "accentMuted": "#c8102e",
+    "source": "flag",
+    "contrastOnPaper": 5.136899701405815,
+    "contrastOnInk": 3.0303540600893077
+  },
+  {
+    "entityId": "tuvalu",
+    "accent": "#1c6b8a",
+    "accentMuted": "#3a7f94",
+    "source": "override",
+    "contrastOnPaper": 5.209865176577953,
+    "contrastOnInk": 2.9879131875446046
+  },
+  {
+    "entityId": "uganda",
+    "accent": "#c32b07",
+    "accentMuted": "#de3108",
+    "source": "flag",
+    "contrastOnPaper": 4.982017453849794,
+    "contrastOnInk": 3.1245624911245025
+  },
+  {
+    "entityId": "ukraine",
+    "accent": "#0057b8",
+    "accentMuted": "#0057b8",
+    "source": "flag",
+    "contrastOnPaper": 6.001098455233666,
+    "contrastOnInk": 2.5939625857747313
+  },
+  {
+    "entityId": "united-arab-emirates",
+    "accent": "#00732f",
+    "accentMuted": "#00732f",
+    "source": "flag",
+    "contrastOnPaper": 5.248802182246641,
+    "contrastOnInk": 2.965748055638038
+  },
+  {
+    "entityId": "united-kingdom",
+    "accent": "#c8102e",
+    "accentMuted": "#c8102e",
+    "source": "flag",
+    "contrastOnPaper": 5.136899701405815,
+    "contrastOnInk": 3.0303540600893077
+  },
+  {
+    "entityId": "united-states",
+    "accent": "#1f3b73",
+    "accentMuted": "#3d4f7d",
+    "source": "override",
+    "contrastOnPaper": 9.49351649308905,
+    "contrastOnInk": 1.639711152106664
+  },
+  {
+    "entityId": "uruguay",
+    "accent": "#75610a",
+    "accentMuted": "#977d0d",
+    "source": "flag",
+    "contrastOnPaper": 5.278957753152584,
+    "contrastOnInk": 2.9488064868733423
+  },
+  {
+    "entityId": "us-minor-outlying-islands",
+    "accent": "#bd3d44",
+    "accentMuted": "#bd3d44",
+    "source": "flag",
+    "contrastOnPaper": 4.683808546567958,
+    "contrastOnInk": 3.3234972590485246
+  },
+  {
+    "entityId": "us-virgin-islands",
+    "accent": "#a60032",
+    "accentMuted": "#a60032",
+    "source": "flag",
+    "contrastOnPaper": 6.873910506169192,
+    "contrastOnInk": 2.264595218755894
+  },
+  {
+    "entityId": "uzbekistan",
+    "accent": "#ce1126",
+    "accentMuted": "#ce1126",
+    "source": "flag",
+    "contrastOnPaper": 4.912446663387753,
+    "contrastOnInk": 3.168813003598396
+  },
+  {
+    "entityId": "vanuatu",
+    "accent": "#d21034",
+    "accentMuted": "#d21034",
+    "source": "flag",
+    "contrastOnPaper": 4.745266206899472,
+    "contrastOnInk": 3.2804534430109036
+  },
+  {
+    "entityId": "venezuela",
+    "accent": "#cf142b",
+    "accentMuted": "#cf142b",
+    "source": "flag",
+    "contrastOnPaper": 4.840477990268518,
+    "contrastOnInk": 3.2159272075448753
+  },
+  {
+    "entityId": "vietnam",
+    "accent": "#c0211a",
+    "accentMuted": "#da251d",
+    "source": "flag",
+    "contrastOnPaper": 5.292804745595289,
+    "contrastOnInk": 2.941091843484558
+  },
+  {
+    "entityId": "wallis-and-futuna",
+    "accent": "#c6000d",
+    "accentMuted": "#e1000f",
+    "source": "flag",
+    "contrastOnPaper": 5.3817094828835135,
+    "contrastOnInk": 2.8925056092188175
+  },
+  {
+    "entityId": "western-sahara",
+    "accent": "#c4111b",
+    "accentMuted": "#c4111b",
+    "source": "flag",
+    "contrastOnPaper": 5.3253008761728005,
+    "contrastOnInk": 2.923144668891295
+  },
+  {
+    "entityId": "yemen",
+    "accent": "#d40500",
+    "accentMuted": "#f10600",
+    "source": "flag",
+    "contrastOnPaper": 4.794048091131175,
+    "contrastOnInk": 3.2470731562381254
+  },
+  {
+    "entityId": "zambia",
+    "accent": "#c31c0e",
+    "accentMuted": "#de2010",
+    "source": "flag",
+    "contrastOnPaper": 5.232788104235906,
+    "contrastOnInk": 2.974824234488988
+  },
+  {
+    "entityId": "zimbabwe",
+    "accent": "#006400",
+    "accentMuted": "#006400",
+    "source": "flag",
+    "contrastOnPaper": 6.4954686322728215,
+    "contrastOnInk": 2.3965360696353275
+  }
+]

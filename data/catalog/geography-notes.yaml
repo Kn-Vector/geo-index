@@ -1,0 +1,93 @@
+# Sourced geography notes for prototype polish. Not statistics.
+# Capitals and territorial notes come from Wikidata / UN statistical practice.
+notes:
+  - entityId: south-africa
+    capitals:
+      - name: Pretoria
+        role: Executive
+      - name: Cape Town
+        role: Legislative
+      - name: Bloemfontein
+        role: Judicial
+    note: South Africa has three capitals. This is a constitutional arrangement, not a data gap.
+    source: Wikidata Q258
+  - entityId: france
+    capitals:
+      - name: Paris
+        role: Capital
+    note: Metropolitan France plus overseas departments and collectivities. Overseas areas with distinct ISO/M49 identities have their own profiles.
+    source: Wikidata Q142; UN M49
+  - entityId: indonesia
+    capitals:
+      - name: Jakarta
+        role: Capital
+    note: An archipelagic state that crosses the antimeridian in some map projections. Silhouettes are unwrapped rather than drawn as a wrap artefact.
+    source: Wikidata Q252; Natural Earth 50m
+  - entityId: china
+    capitals:
+      - name: Beijing
+        role: Capital
+    note: Taiwan is profiled separately under special status (M49 158) and is never labelled a UN member.
+    source: UN M49; this atlas classification policy
+  - entityId: taiwan
+    note: Common name Taiwan. UN statistical designation “Taiwan, Province of China” (M49 158). Classification is special status — not a UN member.
+    source: UN M49 FAQ
+  - entityId: palestine
+    capitals:
+      - name: East Jerusalem
+        role: Proclaimed capital
+      - name: Ramallah
+        role: Administrative centre
+    note: UN observer state. Independently selectable on the globe. Names and boundaries do not imply recognition of legal claims.
+    source: UN observer list; ISO PS/PSE; M49 275
+  - entityId: holy-see
+    capitals:
+      - name: Vatican City
+        role: Seat
+    note: UN observer state. Map geometry may use Vatican City. Statistical coverage is sparse by design.
+    source: UN observer list; ISO VA/VAT; M49 336
+  - entityId: united-states
+    capitals:
+      - name: Washington, D.C.
+        role: Capital
+    source: Wikidata Q30
+  - entityId: japan
+    capitals:
+      - name: Tokyo
+        role: Capital
+    source: Wikidata Q17
+  - entityId: india
+    capitals:
+      - name: New Delhi
+        role: Capital
+    source: Wikidata Q668
+  - entityId: brazil
+    capitals:
+      - name: Brasília
+        role: Capital
+    source: Wikidata Q155
+  - entityId: nigeria
+    capitals:
+      - name: Abuja
+        role: Capital
+    source: Wikidata Q1033
+  - entityId: singapore
+    capitals:
+      - name: Singapore
+        role: City-state
+    note: A city-state. On the 50m globe it is a tiny-country point with an enlarged hit target.
+    source: Wikidata Q334; Natural Earth tiny points
+  - entityId: iceland
+    capitals:
+      - name: Reykjavík
+        role: Capital
+    source: Wikidata Q189
+  - entityId: tuvalu
+    capitals:
+      - name: Funafuti
+        role: Capital
+    note: A microstate with sparse internationally comparable series. Missing values stay missing.
+    source: Wikidata Q672
+  - entityId: kosovo
+    note: Special status. UN Security Council resolution 1244 (1999). M49 statistical code 412. Not a UN member.
+    source: UNSCR 1244; UN M49

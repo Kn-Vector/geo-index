@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Map and status policy — Geo Index"
+  description="How Geo Index treats names, classifications, and boundaries on the globe and in country profiles."
+  canonical="/methodology/maps/"
+>
+  <h1>Map and status policy</h1>
+  <p class="lede">
+    This atlas is a statistical and cartographic reference. It is not a recognition of legal
+    claims, and it does not take a national point of view as its default world map.
+  </p>
+
+  <dl class="policy">
+    <dt>Names and classifications</dt>
+    <dd>
+      Directory and profile headers always show a descriptive classification: UN member, UN
+      observer, associated state, dependency, special administrative region, territory, statistical
+      area, or special status. Classification is not a sovereignty verdict.
+    </dd>
+    <dt>Default geometry</dt>
+    <dd>
+      The globe uses Natural Earth’s de facto cartography, except where disputed areas are overlaid
+      so that observer and special-status entities remain independently selectable — including
+      Palestine, Taiwan, Kosovo, and Western Sahara. We do not ship a national point-of-view
+      tileset as the default.
+    </dd>
+    <dt>Dispute lines</dt>
+    <dd>
+      Dispute lines stay visible and explained. They are not restyled into ordinary international
+      borders, and fills do not imply a legal outcome.
+    </dd>
+    <dt>Hidden-area policy</dt>
+    <dd>
+      Populated, statistically tracked areas are not omitted because they are politically awkward.
+    </dd>
+    <dt>Natural Earth</dt>
+    <dd>Made with Natural Earth. Geometry is public domain.</dd>
+  </dl>
+</BaseLayout>

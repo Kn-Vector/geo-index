@@ -1,0 +1,143 @@
+{
+  "generatedAt": "2026-09-03T02:57:31.983Z",
+  "asOfYear": 2026,
+  "entityCount": 253,
+  "coreProfiles": 195,
+  "vintages": {
+    "wpp": "2024-revision",
+    "wdi": "wdi-2026-07-13",
+    "hdr": "hdr-2025",
+    "uis": "uis-2026-02",
+    "ilo": "ilo-2025-12",
+    "weo": "weo-2026-04",
+    "owid": "owid-co2-2025-12",
+    "naturalEarth": "5.1.1"
+  },
+  "sources": [
+    {
+      "sourceId": "un-wpp",
+      "dataset": "WPP2024 Demographic Indicators Medium",
+      "vintage": "2024-revision",
+      "retrievedAt": "2026-09-03T02:53:11.795Z",
+      "url": "https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_Demographic_Indicators_Medium.csv.gz",
+      "sha256": "286ac36bb1415e2e1ade03acfef0a29f0e4c087e2f78e38c48f50c5df89082bc",
+      "licenseId": "cc-by-3.0-igo"
+    },
+    {
+      "sourceId": "world-bank-wdi",
+      "dataset": "World Development Indicators",
+      "vintage": "wdi-2026-07-13",
+      "retrievedAt": "2026-09-03T02:53:11.907Z",
+      "url": "https://api.worldbank.org/v2/en/indicator/{code}?downloadformat=csv",
+      "licenseId": "cc-by-4.0"
+    },
+    {
+      "sourceId": "undp-hdr",
+      "dataset": "HDR 2025 composite indices complete time series",
+      "vintage": "hdr-2025",
+      "retrievedAt": "2026-09-03T02:53:11.918Z",
+      "url": "https://hdr.undp.org/sites/default/files/2025_HDR/HDR25_Composite_indices_complete_time_series.csv",
+      "sha256": "61ed82e5b66c88dfca8ff9fac775c63981ecab6a254862af97acacc41c143117",
+      "licenseId": "cc-by-3.0-igo"
+    },
+    {
+      "sourceId": "unesco-uis",
+      "dataset": "UIS Bulk Data Download Service (February 2026)",
+      "vintage": "uis-2026-02",
+      "retrievedAt": "2026-09-03T02:53:11.979Z",
+      "url": "https://databrowser.uis.unesco.org/resources/bulk",
+      "licenseId": "cc-by-sa-3.0-igo"
+    },
+    {
+      "sourceId": "ilo-stat",
+      "dataset": "ILOSTAT modelled estimates (annual)",
+      "vintage": "ilo-2025-12",
+      "retrievedAt": "2026-09-03T02:53:11.984Z",
+      "url": "https://rplumber.ilo.org/data/indicator?id={code}",
+      "licenseId": "cc-by-4.0"
+    },
+    {
+      "sourceId": "imf-weo",
+      "dataset": "World Economic Outlook April 2026",
+      "vintage": "weo-2026-04",
+      "retrievedAt": "2026-09-03T02:53:12.012Z",
+      "url": "https://data.imf.org/-/media/iData/External-Storage/Documents/2F78EE59F79143A7921E5E203D3AAA80/en/WEOApr2026all.xlsx",
+      "sha256": "b29239cb48f8b895d1e526070c4fde01147bc8f6bd3b86f636363bb6bd87fe7a",
+      "licenseId": "imf-data-terms"
+    },
+    {
+      "sourceId": "owid-co2",
+      "dataset": "OWID CO2 data (Global Carbon Project)",
+      "vintage": "owid-co2-2025-12",
+      "retrievedAt": "2026-09-03T02:53:12.016Z",
+      "url": "https://owid-public.owid.io/data/co2/owid-co2-data.csv",
+      "sha256": "7ec10de1e9502c20c70bfff54476d7893922f7594aa299d9291d87fe49f3e342",
+      "licenseId": "cc-by-4.0"
+    }
+  ],
+  "indicators": [
+    "population",
+    "gdp",
+    "gdp-per-capita",
+    "hdi",
+    "life-expectancy",
+    "land-area",
+    "population-july",
+    "population-growth-rate",
+    "population-density",
+    "median-age",
+    "sex-ratio",
+    "total-fertility-rate",
+    "crude-birth-rate",
+    "crude-death-rate",
+    "life-expectancy-male",
+    "life-expectancy-female",
+    "infant-mortality",
+    "under-five-mortality",
+    "net-migration",
+    "net-migration-rate",
+    "gdp-ppp",
+    "gdp-per-capita-ppp",
+    "gdp-growth",
+    "gni-per-capita",
+    "inflation-cpi",
+    "unemployment",
+    "trade-pct-gdp",
+    "maternal-mortality",
+    "measles-immunization",
+    "health-expenditure-pct-gdp",
+    "undernourishment",
+    "urban-population-pct",
+    "age-0-14-pct",
+    "age-15-64-pct",
+    "age-65-plus-pct",
+    "surface-area",
+    "electricity-access",
+    "internet-users",
+    "forest-area-pct",
+    "ihdi",
+    "gdi",
+    "gii",
+    "mpi",
+    "literacy-rate-adult",
+    "literacy-rate-youth",
+    "mean-years-schooling",
+    "expected-years-schooling",
+    "labor-force-participation",
+    "employment-to-population",
+    "youth-unemployment",
+    "fiscal-balance-pct-gdp",
+    "government-debt-pct-gdp",
+    "co2-emissions",
+    "co2-per-capita"
+  ],
+  "blockers": [
+    "HDR MPI 2025 tables have no ISO3/M49 column; skipped rather than joining on English names."
+  ],
+  "joinKeys": [
+    "id",
+    "isoAlpha3",
+    "isoAlpha2",
+    "m49"
+  ]
+}

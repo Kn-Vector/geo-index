@@ -1,0 +1,48 @@
+# Manual theme accents when flag sampling is weak (near-white, near-black, or generic RWB).
+# Accents are thin rules / chart highlights, never a page wash. Must meet WCAG 4.5:1 vs paper or ink.
+overrides:
+  japan:
+    accent: "#9b1b30"
+    reason: Hinomaru red deepened so it survives on paper.
+  holy-see:
+    accent: "#6f5610"
+    reason: Vatican gold deepened; pale yellow fails contrast on paper.
+  iceland:
+    accent: "#1d4e89"
+    reason: Flag blue, contrast-checked against paper.
+  france:
+    accent: "#2f4c7a"
+    reason: Avoid generic undiluted RWB; use a deeper blue.
+  united-states:
+    accent: "#1f3b73"
+    reason: Avoid generic RWB trio; navy is contrast-unique on paper.
+  palestine:
+    accent: "#2f6b3a"
+    reason: Flag green, checked against paper.
+  singapore:
+    accent: "#9b2030"
+    reason: Flag red deepened for paper contrast.
+  china:
+    accent: "#a11b1b"
+    reason: Flag red deepened for paper contrast.
+  tuvalu:
+    accent: "#1c6b8a"
+    reason: Ocean blue from the flag field.
+  nigeria:
+    accent: "#1f6b3a"
+    reason: Flag green.
+  brazil:
+    accent: "#1f6b3a"
+    reason: Flag green.
+  india:
+    accent: "#9a4a12"
+    reason: Saffron deepened; avoid pale wheel colours.
+  indonesia:
+    accent: "#9b1b30"
+    reason: Flag red deepened.
+  south-africa:
+    accent: "#3f6b2a"
+    reason: Flag green as the surviving hue on paper.
+  libya:
+    accent: "#1f6b3a"
+    reason: Green is the distinctive surviving hue.

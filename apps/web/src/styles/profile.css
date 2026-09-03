@@ -1,0 +1,251 @@
+.profile-page {
+  --profile-accent: var(--color-accent);
+}
+
+.skip-sections:focus {
+  top: 2.8rem;
+}
+
+.crumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.7rem;
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.crumb li:not(:last-child)::after {
+  content: "/";
+  margin-left: 0.7rem;
+  color: var(--color-rule);
+}
+
+.crumb [aria-current="page"] {
+  color: var(--color-ink);
+}
+
+.profile-themed {
+  --color-accent: var(--profile-accent, var(--color-accent));
+}
+
+.profile-hero {
+  border-top: 2px solid var(--profile-accent, var(--color-ink));
+  padding-top: 1.25rem;
+}
+
+.hero-photo {
+  margin: 1.1rem 0 0;
+  max-width: 42rem;
+}
+
+.hero-photo img,
+.photo-row img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: var(--rule);
+  background: var(--color-paper-raised);
+}
+
+.hero-photo figcaption,
+.photo-row figcaption {
+  margin-top: 0.35rem;
+  font-size: 0.82rem;
+}
+
+.photo-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 0.85rem;
+  margin: 1.1rem 0;
+}
+
+.hero-identity {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 1.1rem 1.35rem;
+  align-items: start;
+}
+
+.hero-flag {
+  border: var(--rule);
+  width: 4.5rem;
+  height: auto;
+  margin-top: 0.45rem;
+  background: var(--color-paper-raised);
+}
+
+.hero-names h1 {
+  margin-bottom: 0.25em;
+}
+
+.hero-official,
+.hero-native {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+}
+
+.hero-native {
+  font-size: 1.35rem;
+}
+
+.hero-place {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 0.9rem;
+  align-items: baseline;
+  margin: 0.4rem 0 0.7rem;
+}
+
+.pill {
+  display: inline-block;
+  border: var(--rule);
+  padding: 0.08rem 0.45rem;
+  font-size: 0.82rem;
+}
+
+.hero-locate {
+  margin: 0;
+  max-width: none;
+}
+
+.hero-silhouette {
+  width: min(11rem, 28vw);
+  color: var(--color-ink);
+}
+
+.hero-silhouette svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
+  gap: 0 1.25rem;
+  margin-top: 1.5rem;
+  border-bottom: var(--rule);
+}
+
+.hero-vintage {
+  margin: 0.9rem 0 0;
+  font-size: 0.9rem;
+  max-width: 46rem;
+}
+
+.profile-nav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: color-mix(in srgb, var(--color-paper) 92%, white);
+  border-bottom: var(--rule);
+  margin: 1.5rem calc(var(--page-gutter) * -1) 0;
+  padding: 0 var(--page-gutter);
+}
+
+.profile-nav-list {
+  display: flex;
+  gap: 0.15rem 1.1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0.55rem 0;
+  overflow-x: auto;
+  font-size: 0.9rem;
+}
+
+.profile-nav a {
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0.15rem;
+}
+
+.profile-nav a:hover,
+.profile-nav a[aria-current="location"] {
+  border-bottom-color: var(--color-ink);
+}
+
+.profile-section {
+  max-width: 42rem;
+  padding-top: 2.25rem;
+  scroll-margin-top: 3.2rem;
+}
+
+.profile-section h2 {
+  border-bottom: 1px solid var(--color-ink);
+  padding-bottom: 0.3rem;
+}
+
+.profile-section h3 {
+  font-size: 1.05rem;
+  margin: 1.4rem 0 0.35rem;
+}
+
+.id-grid {
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  gap: 0.3rem 1rem;
+  margin: 1rem 0;
+}
+
+.id-grid dt {
+  color: var(--color-muted);
+}
+
+.id-grid dd {
+  margin: 0;
+}
+
+.missing-note {
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+.geo-silhouette {
+  margin: 1rem 0 0;
+  max-width: 16rem;
+  color: var(--color-ink);
+}
+
+.geo-silhouette svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.source-block {
+  margin: 1.25rem 0;
+  padding-bottom: 0.4rem;
+  border-bottom: var(--rule);
+}
+
+.source-indicators {
+  margin: 0.4rem 0 0;
+  padding-left: 1.1rem;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 40rem) {
+  .hero-identity {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+  .hero-silhouette {
+    grid-column: 1 / -1;
+    width: 8.5rem;
+  }
+  .id-grid {
+    grid-template-columns: 1fr;
+    gap: 0.1rem 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-nav a {
+    transition: none;
+  }
+}

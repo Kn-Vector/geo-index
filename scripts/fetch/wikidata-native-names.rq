@@ -1,0 +1,11 @@
+# Native names from Wikidata (CC0), keyed by ISO 3166-1 alpha-2.
+# P297 is the join key — never English names.
+SELECT ?iso2 ?iso3 ?qid ?native ?lang WHERE {
+  ?item wdt:P297 ?iso2 .
+  OPTIONAL { ?item wdt:P298 ?iso3 . }
+  OPTIONAL {
+    ?item wdt:P1705 ?native .
+    BIND(LANG(?native) AS ?lang)
+  }
+  BIND(STRAFTER(STR(?item), "entity/") AS ?qid)
+}

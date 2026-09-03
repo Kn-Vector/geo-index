@@ -1,0 +1,52 @@
+name: Preview
+
+on:
+  push:
+    branches: [main, preview]
+  pull_request:
+
+concurrency:
+  group: preview-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Cloudflare Pages preview
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.34.5
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Build static site
+        env:
+          SITE: ${{ vars.SITE || 'https://geo-index.pages.dev' }}
+        run: pnpm build
+
+      - name: Deploy preview to Cloudflare Pages
+        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy apps/web/dist --project-name=geo-index --branch=${{ github.head_ref || github.ref_name }} --commit-dirty=true
+
+      - name: Skip deploy (no Cloudflare token)
+        if: ${{ secrets.CLOUDFLARE_API_TOKEN == '' }}
+        run: |
+          echo "CLOUDFLARE_API_TOKEN is not set."
+          echo "Connect this GitHub repo in the Cloudflare dashboard (Workers & Pages → Create → Import a repository) so production/preview are pulled from Git,"
+          echo "or add CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID as repository secrets to deploy from Actions."

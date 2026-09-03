@@ -1,0 +1,119 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { loadCoverage, loadDataManifest, loadIndicators } from "../../lib/catalog.ts";
+
+const coverage = loadCoverage();
+const manifest = loadDataManifest();
+const labels = new Map(loadIndicators().indicators.map((i) => [i.id, i.label]));
+
+function pct(fraction: number): string {
+  return `${Math.round(fraction * 1000) / 10}%`;
+}
+---
+
+<BaseLayout
+  title="Sources and coverage — Geo Index"
+  description="Provenance, vintages, and coverage fractions for Geo Index indicators. Gaps are published, not filled."
+  canonical="/sources/"
+>
+  <h1>Sources and coverage</h1>
+  <p class="lede">
+    Every published figure names its source, period, and status. Coverage is a fraction of the 195
+    core profiles (UN members and observers). Null is not zero.
+  </p>
+
+  {
+    manifest ? (
+      <section>
+        <h2>Vintages in this build</h2>
+        <dl class="policy">
+          {
+            manifest.sources.map((source) => (
+              <>
+                <dt>{source.dataset}</dt>
+                <dd>
+                  {source.sourceId}. Vintage {source.vintage}. License {source.licenseId}. Retrieved{" "}
+                  {source.retrievedAt.slice(0, 10)}.
+                  {source.url ? (
+                    <>
+                      {" "}
+                      <a href={source.url}>Upstream file</a>.
+                    </>
+                  ) : null}
+                </dd>
+              </>
+            ))
+          }
+        </dl>
+        {
+          manifest.blockers.length ? (
+            <>
+              <h3>Documented gaps</h3>
+              <ul>
+                {manifest.blockers.map((b) => (
+                  <li>{b}</li>
+                ))}
+              </ul>
+            </>
+          ) : null
+        }
+      </section>
+    ) : (
+      <p>Run the data pipeline to publish vintages.</p>
+    )
+  }
+
+  {
+    coverage ? (
+      <section>
+        <h2>Coverage of core profiles</h2>
+        <p class="muted">
+          {coverage.core} core profiles, {coverage.profiledAdditional} additional. Generated{" "}
+          {coverage.generatedAt.slice(0, 10)}.
+        </p>
+        <table class="coverage-table">
+          <thead>
+            <tr>
+              <th scope="col">Indicator</th>
+              <th scope="col">With a value</th>
+              <th scope="col">Of core</th>
+              <th scope="col">Fraction</th>
+            </tr>
+          </thead>
+          <tbody>
+            {coverage.byIndicator.map((row) => (
+              <tr>
+                <th scope="row">
+                  <a href={`/indicators/${row.indicatorId}/`}>{labels.get(row.indicatorId) ?? row.indicatorId}</a>
+                </th>
+                <td>{row.coreWithValue}</td>
+                <td>{row.core}</td>
+                <td>{pct(row.fraction)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+    ) : null
+  }
+
+  <p class="muted">
+    UNESCO UIS snapshots stay under <code>data/raw/unesco/</code> with their own ShareAlike license.
+    IMF WEO forecast years are flagged as projections. CO₂ is Global Carbon Project via OWID, not
+    IEA-EDGAR.
+  </p>
+</BaseLayout>
+
+<style>
+  .coverage-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+  }
+  .coverage-table th,
+  .coverage-table td {
+    text-align: left;
+    padding: 0.35rem 0.6rem 0.35rem 0;
+    border-bottom: var(--rule);
+  }
+</style>
