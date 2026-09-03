@@ -70,7 +70,7 @@ jobs:
 
       - name: Build static site
         env:
-          SITE: ${{ vars.SITE || 'https://geo-index.pages.dev' }}
+          SITE: ${{ vars.SITE || 'https://geo-index-8gl.pages.dev' }}
         run: pnpm build
 
       - name: Deploy production to Cloudflare Pages

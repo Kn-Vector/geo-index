@@ -38,8 +38,8 @@ The live site is a **Cloudflare Pages** project named `geo-index`. A small **Wor
 
 | Branch | Cloudflare | GitHub |
 |---|---|---|
-| `production` | **Production** (`geo-index.pages.dev`) | Creates a versioned **Release** with catalog, checksum, generated-data, geo, and media zips |
-| `main`, `preview`, pull requests | **Preview** (`*.geo-index.pages.dev`) | No release |
+| `production` | **Production** (`https://geo-index-8gl.pages.dev`) | Creates a versioned **Release** with catalog, checksum, generated-data, geo, and media zips |
+| `main`, `preview`, pull requests | **Preview** (`*.geo-index-8gl.pages.dev`) | No release |
 
 Cloudflare should **pull** `production` from GitHub (Workers & Pages → Create → Import a Git repository → this repo → production branch `production`). Preview deployments are created for other branches and PRs.
 
@@ -50,7 +50,7 @@ Build settings (Pages Git or Actions):
 - Node **22**
 - Build command: `corepack enable && pnpm install --frozen-lockfile && pnpm build`
 - Output directory: `apps/web/dist`
-- Environment variable `SITE=https://geo-index.pages.dev` on production (preview builds use `CF_PAGES_URL`)
+- Environment variable `SITE=https://geo-index-8gl.pages.dev` on production (preview builds use `CF_PAGES_URL`)
 
 Do not run `data:fetch` on every CI job. Checksums live in git; large WDI/WPP/WEO blobs are gitignored. Generated profiles, globe GeoJSON, flags, silhouettes, and photos are tracked so a pull build can compile the site.
 
