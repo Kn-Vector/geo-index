@@ -2,8 +2,11 @@ name: Preview
 
 on:
   push:
-    branches: [main, preview]
+    branches:
+      - main
+      - preview
   pull_request:
+  workflow_dispatch:
 
 concurrency:
   group: preview-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -17,6 +20,10 @@ jobs:
       contents: read
       deployments: write
       pull-requests: write
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+      SITE: ${{ vars.SITE || 'https://geo-index-8gl.pages.dev' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -30,23 +37,16 @@ jobs:
           cache: pnpm
 
       - run: pnpm install --frozen-lockfile
-
-      - name: Build static site
-        env:
-          SITE: ${{ vars.SITE || 'https://geo-index-8gl.pages.dev' }}
-        run: pnpm build
+      - run: pnpm build
 
       - name: Deploy preview to Cloudflare Pages
-        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+        if: env.CLOUDFLARE_API_TOKEN != ''
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy apps/web/dist --project-name=geo-index --branch=${{ github.head_ref || github.ref_name }} --commit-dirty=true
 
-      - name: Skip deploy (no Cloudflare token)
-        if: ${{ secrets.CLOUDFLARE_API_TOKEN == '' }}
-        run: |
-          echo "CLOUDFLARE_API_TOKEN is not set."
-          echo "Connect this GitHub repo in the Cloudflare dashboard (Workers & Pages → Create → Import a repository) so production/preview are pulled from Git,"
-          echo "or add CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID as repository secrets to deploy from Actions."
+      - name: Skip Cloudflare deploy
+        if: env.CLOUDFLARE_API_TOKEN == ''
+        run: echo "No CLOUDFLARE_API_TOKEN secret. Cloudflare Git pull or a Pages-edit API token is required to deploy from Actions."
