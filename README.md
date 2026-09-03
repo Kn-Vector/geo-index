@@ -32,13 +32,13 @@ npx pnpm@10.34.5 --filter @geo-index/web preview
 
 ## Deploy (GitHub + Cloudflare)
 
-The live site is a **Cloudflare Pages** project named `geo-index`. A small **Workers** script (`geo-index-releases`) exposes GitHub Release zips at the edge.
+The live site is a **Cloudflare Pages** project named `geo-index` at `https://geo-index-8gl.pages.dev`. Preview aliases live at `https://main.geo-index-8gl.pages.dev`. A **Workers** script (`geo-index-releases`) exposes GitHub Release zips at `https://geo-index-releases.goldenegg.workers.dev`.
 
 ### Branches
 
 | Branch | Cloudflare | GitHub |
 |---|---|---|
-| `production` | **Production** (`https://geo-index-8gl.pages.dev`) | Creates a versioned **Release** with catalog, checksum, generated-data, geo, and media zips |
+| `production` | **Production** (`https://geo-index-8gl.pages.dev`) | Creates a versioned **Release** with sources, catalog, checksum, generated-data, geo, and media zips |
 | `main`, `preview`, pull requests | **Preview** (`*.geo-index-8gl.pages.dev`) | No release |
 
 Cloudflare should **pull** `production` from GitHub (Workers & Pages → Create → Import a Git repository → this repo → production branch `production`). Preview deployments are created for other branches and PRs.
@@ -60,13 +60,14 @@ UNDP compliance: any production deploy that publishes HDI must use the current H
 
 Every push to `production` runs `.github/workflows/production.yml` and publishes:
 
+- `geo-index-sources-*.zip` — site source, Workers, catalogs (no generated data)
 - `geo-index-catalog-*.zip` — entity/indicator catalog, themes, media manifest
 - `geo-index-checksums-*.zip` — SHA-256 sidecars to reproduce `pnpm data:fetch`
 - `geo-index-generated-*.zip` — per-country JSON, coverage, vintages
 - `geo-index-geo-*.zip` — globe geometry, silhouettes, flags
 - `geo-index-media-*.zip` — curated photographs
 
-GitHub also attaches the usual source tarball. The releases Worker (`GET /latest`, `GET /download/generated`) redirects to those assets.
+GitHub also attaches the usual source zip/tarball for the tag. The releases Worker (`GET /latest`, `GET /download/sources`) redirects to those assets.
 
 ```bash
 npx pnpm@10.34.5 release:pack

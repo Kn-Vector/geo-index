@@ -1,6 +1,6 @@
 /**
  * Edge Worker that points at GitHub Releases for versioned source/data zips.
- * Production Pages stays on geo-index.pages.dev; this Worker is geo-index-releases.
+ * Production Pages stays on geo-index-8gl.pages.dev; this Worker is geo-index-releases.
  */
 export interface Env {
   GITHUB_REPO: string;
@@ -46,16 +46,23 @@ export default {
       }
       const release = (await upstream.json()) as {
         assets?: { name: string; browser_download_url: string }[];
+        zipball_url?: string;
       };
       const asset = (release.assets ?? []).find((item) =>
         item.name.toLowerCase().includes(wanted),
       );
-      if (!asset) {
-        return new Response(`No release asset matching "${wanted}"`, {
-          status: 404,
-        });
+      if (asset) {
+        return Response.redirect(asset.browser_download_url, 302);
       }
-      return Response.redirect(asset.browser_download_url, 302);
+      if (
+        (wanted === "sources" || wanted === "source") &&
+        release.zipball_url
+      ) {
+        return Response.redirect(release.zipball_url, 302);
+      }
+      return new Response(`No release asset matching "${wanted}"`, {
+        status: 404,
+      });
     }
 
     return new Response(

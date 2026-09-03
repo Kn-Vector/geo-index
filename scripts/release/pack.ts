@@ -99,6 +99,29 @@ function zipRoots(name: string, paths: string[]) {
 rmSync(outDir, { recursive: true, force: true });
 mkdirSync(outDir, { recursive: true });
 
+zipRoots("geo-index-sources", [
+  "apps/web/src",
+  "apps/web/public/_headers",
+  "apps/web/astro.config.ts",
+  "apps/web/package.json",
+  "apps/web/tsconfig.json",
+  "packages",
+  "scripts",
+  "functions",
+  "workers",
+  "package.json",
+  "pnpm-lock.yaml",
+  "pnpm-workspace.yaml",
+  "wrangler.toml",
+  "README.md",
+  "LICENSE",
+  ".github",
+  ".nvmrc",
+  ".npmrc",
+  ".gitignore",
+  "data/catalog",
+  "data/themes",
+]);
 zipRoots("geo-index-catalog", ["data/catalog", "data/themes", "data/media"]);
 const checksums = stageChecksums();
 if (checksums) {
