@@ -32,25 +32,29 @@ npx pnpm@10.34.5 --filter @geo-index/web preview
 
 ## Deploy (GitHub + Cloudflare)
 
-The live site is a **Cloudflare Pages** project named `geo-index` at `https://geo-index-8gl.pages.dev`. Preview aliases live at `https://main.geo-index-8gl.pages.dev`. A **Workers** script (`geo-index-releases`) exposes GitHub Release zips at `https://geo-index-releases.goldenegg.workers.dev`.
+The public site is a **Cloudflare Worker + Assets** app, same pattern as TenFold and UpBid.
+
+- **Production:** [https://geo-index.goldenegg.workers.dev](https://geo-index.goldenegg.workers.dev)
+- **Preview:** [https://geo-index-preview.goldenegg.workers.dev](https://geo-index-preview.goldenegg.workers.dev)
+- **Pages production:** [https://geo-index-8gl.pages.dev](https://geo-index-8gl.pages.dev)
+- **Pages preview:** [https://main.geo-index-8gl.pages.dev](https://main.geo-index-8gl.pages.dev)
+- **Release zips:** [https://geo-index-releases.goldenegg.workers.dev](https://geo-index-releases.goldenegg.workers.dev)
 
 ### Branches
 
 | Branch | Cloudflare | GitHub |
 |---|---|---|
-| `production` | **Production** (`https://geo-index-8gl.pages.dev`) | Creates a versioned **Release** with sources, catalog, checksum, generated-data, geo, and media zips |
-| `main`, `preview`, pull requests | **Preview** (`*.geo-index-8gl.pages.dev`) | No release |
+| `production` | Worker `geo-index` + Pages production | Versioned **Release** zips (sources, catalog, checksums, generated, geo, media) |
+| `main`, `preview`, pull requests | Worker `geo-index-preview` + Pages preview | No release |
 
-Cloudflare should **pull** `production` from GitHub (Workers & Pages → Create → Import a Git repository → this repo → production branch `production`). Preview deployments are created for other branches and PRs.
+Local first deploy uses the logged-in Wrangler OAuth session (`pnpm deploy`). GitHub Actions redeploys when `CLOUDFLARE_API_TOKEN` is set (same token already on `grey-goose-press`). Account ID `0e7457e9e732a01a6039f7902c7a7a60`.
 
-Until the GitHub app is connected, GitHub Actions can **push** builds with `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` repository secrets (Account ID `0e7457e9e732a01a6039f7902c7a7a60`). Create a token with *Account / Cloudflare Pages / Edit* and *Account / Workers Scripts / Edit*.
-
-Build settings (Pages Git or Actions):
+Build settings:
 
 - Node **22**
 - Build command: `corepack enable && pnpm install --frozen-lockfile && pnpm build`
 - Output directory: `apps/web/dist`
-- Environment variable `SITE=https://geo-index-8gl.pages.dev` on production (preview builds use `CF_PAGES_URL`)
+- `SITE=https://geo-index.goldenegg.workers.dev`
 
 Do not run `data:fetch` on every CI job. Checksums live in git; large WDI/WPP/WEO blobs are gitignored. Generated profiles, globe GeoJSON, flags, silhouettes, and photos are tracked so a pull build can compile the site.
 
@@ -71,8 +75,10 @@ GitHub also attaches the usual source zip/tarball for the tag. The releases Work
 
 ```bash
 npx pnpm@10.34.5 release:pack
-npx --yes wrangler@4 pages deploy apps/web/dist --project-name geo-index --branch production
-npx --yes wrangler@4 deploy --config workers/releases/wrangler.toml
+npx pnpm@10.34.5 deploy
+npx pnpm@10.34.5 deploy:preview
+npx pnpm@10.34.5 deploy:pages
+npx pnpm@10.34.5 deploy:releases
 ```
 
 ## Layout

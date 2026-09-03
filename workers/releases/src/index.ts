@@ -1,6 +1,6 @@
 /**
  * Edge Worker that points at GitHub Releases for versioned source/data zips.
- * Production Pages stays on geo-index-8gl.pages.dev; this Worker is geo-index-releases.
+ * Atlas Worker is geo-index.goldenegg.workers.dev; this Worker is geo-index-releases.
  */
 export interface Env {
   GITHUB_REPO: string;

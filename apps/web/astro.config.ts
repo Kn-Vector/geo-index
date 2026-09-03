@@ -6,7 +6,7 @@ export default defineConfig({
   site:
     process.env.CF_PAGES_URL ??
     process.env.SITE ??
-    "https://geo-index-8gl.pages.dev",
+    "https://geo-index.goldenegg.workers.dev",
   integrations: [preact()],
   trailingSlash: "always",
 });

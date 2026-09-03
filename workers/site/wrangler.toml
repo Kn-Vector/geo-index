@@ -1,0 +1,27 @@
+# Primary live host — same Workers + Assets pattern as TenFold / UpBid.
+name = "geo-index"
+main = "src/index.ts"
+compatibility_date = "2026-09-03"
+workers_dev = true
+
+[assets]
+directory = "../../apps/web/dist"
+binding = "ASSETS"
+html_handling = "auto-trailing-slash"
+run_worker_first = true
+
+[vars]
+SITE = "https://geo-index.goldenegg.workers.dev"
+
+[env.preview]
+name = "geo-index-preview"
+workers_dev = true
+
+[env.preview.assets]
+directory = "../../apps/web/dist"
+binding = "ASSETS"
+html_handling = "auto-trailing-slash"
+run_worker_first = true
+
+[env.preview.vars]
+SITE = "https://geo-index-preview.goldenegg.workers.dev"
